@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--統測分數-->
+        <scene sceneID="0Dv-Y8-nD4">
+            <objects>
+                <viewController id="8Ew-Pb-ckK" customClass="UnifyPageController" customModule="seniorhigh" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gcv-jz-r9l">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1qp-Qw-FUL">
+                                <rect key="frame" x="0.0" y="128" width="414" height="635"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="basicCell" textLabel="Xro-nk-ivI" rowHeight="70" style="IBUITableViewCellStyleDefault" id="WV3-ZC-dqM">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WV3-ZC-dqM" id="euZ-eb-Q5Z">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xro-nk-ivI">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="70"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="gradeCell" rowHeight="70" id="qBQ-KH-E38" customClass="GradeTableViewCell" customModule="seniorhigh" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="98" width="414" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qBQ-KH-E38" id="5b1-GR-GGn">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Dlh-Ax-gCh">
+                                                    <rect key="frame" x="20" y="15" width="250" height="47"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cc-Ox-MYi">
+                                                            <rect key="frame" x="0.0" y="0.0" width="250" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ub-HP-ews">
+                                                            <rect key="frame" x="0.0" y="26.5" width="250" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="250" id="fEo-bY-oeM"/>
+                                                    </constraints>
+                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5P-xq-JQe">
+                                                    <rect key="frame" x="352" y="24" width="42" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="Dlh-Ax-gCh" firstAttribute="leading" secondItem="5b1-GR-GGn" secondAttribute="leading" constant="20" id="AgL-fC-O9Z"/>
+                                                <constraint firstItem="H5P-xq-JQe" firstAttribute="trailing" secondItem="5b1-GR-GGn" secondAttribute="trailingMargin" id="Bpi-LS-a8b"/>
+                                                <constraint firstItem="H5P-xq-JQe" firstAttribute="top" secondItem="5b1-GR-GGn" secondAttribute="topMargin" constant="13" id="oTB-yH-K1B"/>
+                                                <constraint firstItem="Dlh-Ax-gCh" firstAttribute="top" secondItem="5b1-GR-GGn" secondAttribute="topMargin" constant="4" id="uYF-al-1SL"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="departmentLabel" destination="2Ub-HP-ews" id="oDy-qS-NT9"/>
+                                            <outlet property="gradeLabel" destination="H5P-xq-JQe" id="1We-Ek-eAz"/>
+                                            <outlet property="schoolLabel" destination="2cc-Ox-MYi" id="RuX-34-f1a"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="8Ew-Pb-ckK" id="It6-5d-Dam"/>
+                                    <outlet property="delegate" destination="8Ew-Pb-ckK" id="qMj-Mw-U2V"/>
+                                </connections>
+                            </tableView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1W6-EN-knv">
+                                <rect key="frame" x="20" y="94" width="374" height="32"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="cBt-6j-yon">
+                                        <rect key="frame" x="0.0" y="0.0" width="1682" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8EK-XW-1dZ" userLabel="全部學校">
+                                                <rect key="frame" x="0.0" y="0.0" width="62" height="30"/>
+                                                <state key="normal" title="全部學校">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="switchToAllSchool:" destination="8Ew-Pb-ckK" eventType="touchUpInside" id="wcm-v6-RAE"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1db-mi-hjf">
+                                                <rect key="frame" x="81" y="0.0" width="62" height="30"/>
+                                                <state key="normal" title="機械">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="switchToGroup1:" destination="8Ew-Pb-ckK" eventType="touchUpInside" id="ere-yd-8Jx"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QhQ-NI-oMJ" userLabel="動機">
+                                                <rect key="frame" x="162" y="0.0" width="62" height="30"/>
+                                                <state key="normal" title="動機">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="switchToGroup2:" destination="8Ew-Pb-ckK" eventType="touchUpInside" id="V7t-su-wsk"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nMB-bH-E0n" userLabel="電機">
+                                                <rect key="frame" x="243" y="0.0" width="62" height="30"/>
+                                                <state key="normal" title="電機">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="switchToGroup3:" destination="8Ew-Pb-ckK" eventType="touchUpInside" id="TEs-gm-zuV"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xx-md-tdz" userLabel="資電">
+                                                <rect key="frame" x="324" y="0.0" width="62" height="30"/>
+                                                <state key="normal" title="資電">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="switchToGroup4:" destination="8Ew-Pb-ckK" eventType="touchUpInside" id="wog-aV-Ef6"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMA-81-Czl" userLabel="化工">
+                                                <rect key="frame" x="405" y="0.0" width="62" height="30"/>
+                                                <state key="normal" title="化工">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="switchToGroup5:" destination="8Ew-Pb-ckK" eventType="touchUpInside" id="opP-CW-0Dg"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUo-hO-9Hf" userLabel="土木">
+                                                <rect key="frame" x="486" y="0.0" width="62" height="30"/>
+                                                <state key="normal" title="土木">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="switchToGroup6:" destination="8Ew-Pb-ckK" eventType="touchUpInside" id="taV-b3-0VT"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9M9-Xh-jbl" userLabel="設計">
+                                                <rect key="frame" x="567" y="0.0" width="62" height="30"/>
+                                                <state key="normal" title="設計">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="switchToGroup7:" destination="8Ew-Pb-ckK" eventType="touchUpInside" id="rCs-Tz-X05"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AM5-dO-QA8" userLabel="工管">
+                                                <rect key="frame" x="648" y="0.0" width="62" height="30"/>
+                                                <state key="normal" title="工管">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="switchToGroup8:" destination="8Ew-Pb-ckK" eventType="touchUpInside" id="jNL-bB-p3r"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZ2-nJ-tDn" userLabel="商管">
+                                                <rect key="frame" x="729" y="0.0" width="62" height="30"/>
+                                                <state key="normal" title="商管">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="switchToGroup9:" destination="8Ew-Pb-ckK" eventType="touchUpInside" id="qOn-y6-T7X"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLO-xK-pdT" userLabel="衛護">
+                                                <rect key="frame" x="810" y="0.0" width="62" height="30"/>
+                                                <state key="normal" title="衛護">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="switchToGroup10:" destination="8Ew-Pb-ckK" eventType="touchUpInside" id="aVT-Z2-Yez"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gf6-ap-UqP" userLabel="食品">
+                                                <rect key="frame" x="891" y="0.0" width="62" height="30"/>
+                                                <state key="normal" title="食品">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="switchToGroup11:" destination="8Ew-Pb-ckK" eventType="touchUpInside" id="oJg-G3-9s3"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YSv-7p-WF9" userLabel="幼保">
+                                                <rect key="frame" x="972" y="0.0" width="62" height="30"/>
+                                                <state key="normal" title="幼保">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="switchToGroup12:" destination="8Ew-Pb-ckK" eventType="touchUpInside" id="NXN-o3-KDX"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRc-6w-GTq" userLabel="生活">
+                                                <rect key="frame" x="1053" y="0.0" width="62" height="30"/>
+                                                <state key="normal" title="生活">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="switchToGroup13:" destination="8Ew-Pb-ckK" eventType="touchUpInside" id="ofn-CN-rV7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="skF-LJ-mC5">
+                                                <rect key="frame" x="1134" y="0.0" width="62" height="30"/>
+                                                <state key="normal" title="農業">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="switchToGroup14:" destination="8Ew-Pb-ckK" eventType="touchUpInside" id="hYA-74-zSi"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tc-ol-Neh" userLabel="英語">
+                                                <rect key="frame" x="1215" y="0.0" width="62" height="30"/>
+                                                <state key="normal" title="英語">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="switchToGroup15:" destination="8Ew-Pb-ckK" eventType="touchUpInside" id="icB-Kw-E7Z"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="APG-Hf-XEB" userLabel="日語">
+                                                <rect key="frame" x="1296" y="0.0" width="62" height="30"/>
+                                                <state key="normal" title="日語">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="switchToGroup16:" destination="8Ew-Pb-ckK" eventType="touchUpInside" id="zBk-Xz-gpU"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qab-tE-DDe" userLabel="餐旅">
+                                                <rect key="frame" x="1377" y="0.0" width="62" height="30"/>
+                                                <state key="normal" title="餐旅">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="switchToGroup17:" destination="8Ew-Pb-ckK" eventType="touchUpInside" id="lsn-g8-xkx"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3nM-BR-248" userLabel="海事">
+                                                <rect key="frame" x="1458" y="0.0" width="62" height="30"/>
+                                                <state key="normal" title="海事">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="switchToGroup18:" destination="8Ew-Pb-ckK" eventType="touchUpInside" id="JqU-QU-SgC"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hod-3P-GH6" userLabel="水產">
+                                                <rect key="frame" x="1539" y="0.0" width="62" height="30"/>
+                                                <state key="normal" title="水產">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="switchToGroup19:" destination="8Ew-Pb-ckK" eventType="touchUpInside" id="2Hs-It-Lff"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRF-z6-HM9" userLabel="藝影">
+                                                <rect key="frame" x="1620" y="0.0" width="62" height="30"/>
+                                                <state key="normal" title="藝影">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="switchToGroup20:" destination="8Ew-Pb-ckK" eventType="touchUpInside" id="hFI-xF-avB"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <viewLayoutGuide key="safeArea" id="Js7-5J-F2E"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="cBt-6j-yon" firstAttribute="top" secondItem="1W6-EN-knv" secondAttribute="top" id="Idg-RM-nt7"/>
+                                    <constraint firstAttribute="bottom" secondItem="cBt-6j-yon" secondAttribute="bottom" id="McZ-PZ-5f9"/>
+                                    <constraint firstAttribute="trailing" secondItem="cBt-6j-yon" secondAttribute="trailing" id="QY2-Kb-cRQ"/>
+                                    <constraint firstItem="cBt-6j-yon" firstAttribute="leading" secondItem="1W6-EN-knv" secondAttribute="leading" id="o1R-je-gmT"/>
+                                    <constraint firstAttribute="height" constant="32" id="oCf-Pz-00A"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="Ltm-42-cxZ"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="1W6-EN-knv" firstAttribute="centerX" secondItem="Gcv-jz-r9l" secondAttribute="centerX" id="U5c-x8-KMT"/>
+                            <constraint firstItem="1qp-Qw-FUL" firstAttribute="top" secondItem="1W6-EN-knv" secondAttribute="bottom" constant="2" id="lrr-kP-lEN"/>
+                            <constraint firstItem="1W6-EN-knv" firstAttribute="top" secondItem="wpz-Xp-TmV" secondAttribute="top" constant="6" id="ooO-t7-2k7"/>
+                            <constraint firstItem="wpz-Xp-TmV" firstAttribute="trailing" secondItem="1qp-Qw-FUL" secondAttribute="trailing" id="p6o-QN-T8f"/>
+                            <constraint firstItem="1qp-Qw-FUL" firstAttribute="leading" secondItem="wpz-Xp-TmV" secondAttribute="leading" id="pQ4-Z9-Cp6"/>
+                            <constraint firstItem="wpz-Xp-TmV" firstAttribute="bottom" secondItem="1qp-Qw-FUL" secondAttribute="bottom" constant="50" id="t0Y-W2-Roc"/>
+                            <constraint firstItem="1qp-Qw-FUL" firstAttribute="centerX" secondItem="Gcv-jz-r9l" secondAttribute="centerX" id="vPC-yF-WNP"/>
+                            <constraint firstItem="1W6-EN-knv" firstAttribute="leading" secondItem="wpz-Xp-TmV" secondAttribute="leading" constant="20" id="ze0-AH-cyi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wpz-Xp-TmV"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="aZR-yv-nFx" appends="YES" id="OUl-nE-bhh"/>
+                            <outletCollection property="gestureRecognizers" destination="bM5-qO-d3c" appends="YES" id="c1j-cn-glL"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="統測分數" id="653-cO-EfT">
+                        <barButtonItem key="leftBarButtonItem" title="返回" image="ic_back" id="rcB-PZ-b0d">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="backPressed:" destination="8Ew-Pb-ckK" id="3CG-re-5Rs"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="搜尋" image="ic_search" id="7Eh-1O-SG1">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="sB8-YT-nKo" kind="show" id="t2o-n3-dyw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backButton" destination="rcB-PZ-b0d" id="iss-VN-jw2"/>
+                        <outlet property="switchButtonScrollView" destination="1W6-EN-knv" id="Foh-1H-NDe"/>
+                        <outlet property="switchToAllSchoolButton" destination="8EK-XW-1dZ" id="OzB-lm-eQ1"/>
+                        <outlet property="switchToGroup10Button" destination="wLO-xK-pdT" id="huW-YX-dFC"/>
+                        <outlet property="switchToGroup11Button" destination="gf6-ap-UqP" id="mc2-bP-FXd"/>
+                        <outlet property="switchToGroup12Button" destination="YSv-7p-WF9" id="1hZ-Sb-rCU"/>
+                        <outlet property="switchToGroup13Button" destination="tRc-6w-GTq" id="JNf-6v-s5M"/>
+                        <outlet property="switchToGroup14Button" destination="skF-LJ-mC5" id="reX-0O-vqD"/>
+                        <outlet property="switchToGroup15Button" destination="5tc-ol-Neh" id="67R-QZ-rEB"/>
+                        <outlet property="switchToGroup16Button" destination="APG-Hf-XEB" id="ljd-Af-3jO"/>
+                        <outlet property="switchToGroup17Button" destination="qab-tE-DDe" id="oa4-3f-Sgj"/>
+                        <outlet property="switchToGroup18Button" destination="3nM-BR-248" id="sjy-Ii-S7j"/>
+                        <outlet property="switchToGroup19Button" destination="hod-3P-GH6" id="Kab-SQ-ntL"/>
+                        <outlet property="switchToGroup1Button" destination="1db-mi-hjf" id="5qI-nj-NTQ"/>
+                        <outlet property="switchToGroup20Button" destination="wRF-z6-HM9" id="TtP-Ho-DVP"/>
+                        <outlet property="switchToGroup2Button" destination="QhQ-NI-oMJ" id="3zD-W1-CfG"/>
+                        <outlet property="switchToGroup3Button" destination="nMB-bH-E0n" id="w1K-qb-zZX"/>
+                        <outlet property="switchToGroup4Button" destination="4xx-md-tdz" id="Mt0-Yv-z0b"/>
+                        <outlet property="switchToGroup5Button" destination="BMA-81-Czl" id="BfK-zY-vEk"/>
+                        <outlet property="switchToGroup6Button" destination="oUo-hO-9Hf" id="xL7-ox-hhA"/>
+                        <outlet property="switchToGroup7Button" destination="9M9-Xh-jbl" id="hHM-dl-Q80"/>
+                        <outlet property="switchToGroup8Button" destination="AM5-dO-QA8" id="vzS-3x-mBe"/>
+                        <outlet property="switchToGroup9Button" destination="OZ2-nJ-tDn" id="Ta5-UD-4Iv"/>
+                        <outlet property="tableView" destination="1qp-Qw-FUL" id="bTz-hU-RNv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9jB-Qk-fmz" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="aZR-yv-nFx">
+                    <connections>
+                        <action selector="swipeRight:" destination="8Ew-Pb-ckK" id="GtF-VX-SDb"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="bM5-qO-d3c">
+                    <connections>
+                        <action selector="swipeLeft:" destination="8Ew-Pb-ckK" id="3IF-CW-oxR"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1975.36231884058" y="-670.98214285714278"/>
+        </scene>
+        <!--統測-->
+        <scene sceneID="6zJ-gl-DJr">
+            <objects>
+                <navigationController storyboardIdentifier="UnifyPage" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Qhe-xl-oJ3" userLabel="統測" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="統測" image="ic_unify" id="PzH-GS-uS0" userLabel="統測"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qjb-S9-Aq7">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="barTintColor" red="0.17609574950000001" green="0.1768163043" blue="0.18242385790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8Ew-Pb-ckK" kind="relationship" relationship="rootViewController" id="XHY-1h-hiR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sbZ-qn-8qP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1037.5999999999999" y="-670.61469265367316"/>
+        </scene>
+        <!--Unify Search Page Controller-->
+        <scene sceneID="lEi-YY-3XS">
+            <objects>
+                <viewController id="sB8-YT-nKo" customClass="UnifySearchPageController" customModule="seniorhigh" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gEC-kf-JxV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GA9-wc-dql">
+                                <rect key="frame" x="0.0" y="96" width="414" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="gradeCell" rowHeight="70" id="nLQ-X9-1qG" customClass="GradeTableViewCell" customModule="seniorhigh" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nLQ-X9-1qG" id="1SH-3q-OOc">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="n6u-hn-rdZ">
+                                                    <rect key="frame" x="20" y="15" width="250" height="47"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f5U-LW-1s3">
+                                                            <rect key="frame" x="0.0" y="0.0" width="250" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvQ-OX-mvM">
+                                                            <rect key="frame" x="0.0" y="26.5" width="250" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="250" id="Xxx-hN-wel"/>
+                                                    </constraints>
+                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="laj-qL-PDB">
+                                                    <rect key="frame" x="352" y="24" width="42" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="n6u-hn-rdZ" firstAttribute="top" secondItem="1SH-3q-OOc" secondAttribute="topMargin" constant="4" id="OSx-md-Aym"/>
+                                                <constraint firstItem="n6u-hn-rdZ" firstAttribute="leading" secondItem="1SH-3q-OOc" secondAttribute="leading" constant="20" id="fLd-s3-fwP"/>
+                                                <constraint firstItem="laj-qL-PDB" firstAttribute="top" secondItem="1SH-3q-OOc" secondAttribute="topMargin" constant="13" id="tJI-Q6-JCi"/>
+                                                <constraint firstItem="laj-qL-PDB" firstAttribute="trailing" secondItem="1SH-3q-OOc" secondAttribute="trailingMargin" id="yoB-cS-Wrp"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="departmentLabel" destination="vvQ-OX-mvM" id="sar-eZ-uDn"/>
+                                            <outlet property="gradeLabel" destination="laj-qL-PDB" id="Y9L-Uz-haQ"/>
+                                            <outlet property="schoolLabel" destination="f5U-LW-1s3" id="Qe5-6x-yMW"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="sB8-YT-nKo" id="C49-HW-Kue"/>
+                                    <outlet property="delegate" destination="sB8-YT-nKo" id="m7g-l1-VYM"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GA9-wc-dql" firstAttribute="leading" secondItem="o5c-TO-Aw6" secondAttribute="leading" id="0oX-RR-XM7"/>
+                            <constraint firstItem="o5c-TO-Aw6" firstAttribute="trailing" secondItem="GA9-wc-dql" secondAttribute="trailing" id="P03-V6-7De"/>
+                            <constraint firstItem="GA9-wc-dql" firstAttribute="top" secondItem="o5c-TO-Aw6" secondAttribute="top" constant="8" id="VaV-IJ-2oG"/>
+                            <constraint firstItem="o5c-TO-Aw6" firstAttribute="bottom" secondItem="GA9-wc-dql" secondAttribute="bottom" constant="50" id="wa4-0O-5en"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="o5c-TO-Aw6"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="GA9-wc-dql" id="waC-1s-S2W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c21-Wq-mxh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3095.6521739130435" y="-666.29464285714278"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+    <resources>
+        <image name="ic_back" width="24" height="24"/>
+        <image name="ic_search" width="24" height="24"/>
+        <image name="ic_unify" width="24" height="24"/>
+    </resources>
+</document>

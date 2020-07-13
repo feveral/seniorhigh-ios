@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="P3K-cR-O0L">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Page Controller-->
+        <scene sceneID="yKm-TQ-Rgl">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="P3K-cR-O0L" customClass="MainPageController" customModule="seniorhigh" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tGA-LU-A3f">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+                        <color key="selectedImageTintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="qJa-Qs-unq" kind="relationship" relationship="viewControllers" id="Sar-Np-Og3"/>
+                        <segue destination="Muj-f7-Oox" kind="relationship" relationship="viewControllers" id="QiC-q2-noo"/>
+                        <segue destination="YsV-QX-SxP" kind="relationship" relationship="viewControllers" id="cfh-JX-RHG"/>
+                        <segue destination="rUp-Rl-QZc" kind="relationship" relationship="viewControllers" id="d4N-ip-OIz"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YYf-7X-f9F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-414" y="233"/>
+        </scene>
+        <!--DesignatedPage-->
+        <scene sceneID="XJH-no-o61">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="DesignatedPage" storyboardName="DesignatedPage" referencedIdentifier="DesignatedPage" id="qJa-Qs-unq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="指考" id="wCc-K6-4Ci"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZDC-mA-uAe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="598" y="154"/>
+        </scene>
+        <!--BasicPage-->
+        <scene sceneID="hYK-Hq-yyQ">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="BasicPage" storyboardName="BasicPage" referencedIdentifier="BasicPage" id="Muj-f7-Oox" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="學測" id="dGN-ES-1L9"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zby-Vv-uDH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="569" y="232"/>
+        </scene>
+        <!--UnifyPage-->
+        <scene sceneID="ha7-iK-nXF">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UnifyPage" referencedIdentifier="UnifyPage" id="YsV-QX-SxP" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="統測" id="ebk-bc-f84"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s1b-4x-u6I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="569" y="338"/>
+        </scene>
+        <!--FavoritePage-->
+        <scene sceneID="Jr3-3W-mSI">
+            <objects>
+                <viewControllerPlaceholder storyboardName="FavoritePage" referencedIdentifier="FavoritePage" id="rUp-Rl-QZc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="r4M-rr-vyF"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d0H-Yt-sZj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="570" y="464"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+</document>
