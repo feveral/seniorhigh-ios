@@ -50,10 +50,8 @@ class UnifyPageController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if (tableStatus.getSchoolDepartmentStatus() == .school && tableStatus.getGroupStatus() == .schoolDepartment) {
-            reloadTable()
-        }
         tableStatus.clickCell(viewController: self, indexPath: indexPath)
+        reloadTable()
         setBackButtonVisibility()
     }
     

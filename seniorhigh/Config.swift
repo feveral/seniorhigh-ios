@@ -33,5 +33,5 @@ struct ApplicationConfig {
     let adTestDevices = ["12480dc4f1ac79cd7d05e5b453367555"]
     let mainBannerAdId = "ca-app-pub-7439674685628581/4529433104"
     let interstitialAdId = "ca-app-pub-7439674685628581/4580144816"
-    let isInteritialAdEnable = true
+    let isInteritialAdEnable = false
 }
