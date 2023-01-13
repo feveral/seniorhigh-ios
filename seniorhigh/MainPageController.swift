@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMobileAds
+import AdSupport
 
 class MainPageController: UITabBarController, GADInterstitialDelegate {
     

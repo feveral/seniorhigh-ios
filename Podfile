@@ -9,6 +9,7 @@ target 'seniorhigh' do
   pod 'SQLite.swift', '~> 0.12.0'
   pod 'Google-Mobile-Ads-SDK'
   pod 'MaterialComponents/Tabs'
+  pod 'SnapKit', '~> 5.0.0'
 
   target 'seniorhighTests' do
     inherit! :search_paths

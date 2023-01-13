@@ -132,8 +132,6 @@ class UnifyTableStatus {
     
     public func cellCount() -> Int {
         if (groupStatus == .schoolDepartment) {
-            print(schoolOrDepartmentList)
-            print(schoolOrDepartmentList.count)
             return schoolOrDepartmentList.count
         }
         return gradeList.count

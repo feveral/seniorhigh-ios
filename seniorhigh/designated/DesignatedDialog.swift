@@ -66,7 +66,7 @@ class DesignatedDialog: AlertDialog {
     }
     
     private func refreshContainer() {
-        _containerStackView.frame = CGRect(x: 12.5, y: 12.5, width: dialogWidth-25, height: dialogHeight-25)
+        _containerStackView.frame = CGRect(x: 12.5, y: 12.5, width: dialogWidth-20, height: dialogHeight-25)
         _containerView.frame = CGRect(x: 30, y: (UIScreen.main.bounds.height-dialogHeight) / 2, width: dialogWidth, height: dialogHeight)
         _containerView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         _containerView.layer.cornerRadius = 20.0

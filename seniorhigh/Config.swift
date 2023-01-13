@@ -22,13 +22,13 @@ struct TextConfig {
 
 struct ApplicationConfig {
     let apiURL = "http://seniorhigh.feveral.idv.tw/api/"
-    let designatedFirstYear = "108"
-    let designatedSecondYear = "107"
-    let basicFirstYear = "109"
-    let basicSecondYear = "108"
-    let unifyFirstYear = "108"
-    let unifySecondYear = "107"
-    let gradeDBFileName = "grade_2020_0712"
+    let designatedFirstYear = "110"
+    let designatedSecondYear = "109"
+    let basicFirstYear = "111"
+    let basicSecondYear = "110"
+    let unifyFirstYear = "110"
+    let unifySecondYear = "109"
+    let gradeDBFileName = "grade_2023_0113"
     let userDBFileName = "user"
     let adTestDevices = ["12480dc4f1ac79cd7d05e5b453367555"]
     let mainBannerAdId = "ca-app-pub-7439674685628581/4529433104"

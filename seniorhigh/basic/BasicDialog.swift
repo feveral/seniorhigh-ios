@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SnapKit
 
 class BasicDialog: AlertDialog {
     
@@ -94,10 +95,7 @@ class BasicDialog: AlertDialog {
     private func addGradeLabel(grade: BasicGrade) {
         let gradePromptString = ["篩選順序一", "篩選順序二", "篩選順序三", "篩選順序四", "篩選順序五"]
         for i in 1...grade.subjectGrade.order {
-            let stack = UIStackView()
-            stack.axis = .horizontal
-            stack.alignment = .center
-            stack.distribution = .fillEqually
+            let container = UIView()
             let gradePromptLabel = UILabel(frame: CGRect(x: 0, y: 0, width: dialogWidth, height: 3))
             gradePromptLabel.textColor = UIColor.black
             gradePromptLabel.text = gradePromptString[i-1]
@@ -109,11 +107,34 @@ class BasicDialog: AlertDialog {
             gradeLabel.text = String(grade.subjectGrade.getGrade(order: i))
             gradeLabel.textColor = #colorLiteral(red: 1, green: 0.662745098, blue: 0.07843137255, alpha: 1)
             gradeLabel.textAlignment = NSTextAlignment.center
-            stack.addArrangedSubview(gradePromptLabel)
-            stack.addArrangedSubview(subjectLabel)
-            stack.addArrangedSubview(gradeLabel)
+            container.addSubview(gradePromptLabel)
+            container.addSubview(subjectLabel)
+            container.addSubview(gradeLabel)
+            
             addDialogHeight()
-            _containerStackView.addArrangedSubview(stack)
+            _containerStackView.addArrangedSubview(container)
+            
+            let containerWidth = dialogWidth - 30
+            
+            container.snp.makeConstraints { make in
+                make.width.equalTo(containerWidth)
+                make.centerX.equalToSuperview()
+            }
+            gradePromptLabel.snp.makeConstraints { make in
+                make.leading.equalToSuperview()
+                make.width.equalTo(containerWidth * 0.3)
+                make.top.equalToSuperview()
+            }
+            subjectLabel.snp.makeConstraints { make in
+                make.leading.equalTo(gradePromptLabel.snp.trailing).offset(5)
+                make.width.equalTo(containerWidth * 0.55)
+                make.top.equalToSuperview()
+            }
+            gradeLabel.snp.makeConstraints { make in
+                make.leading.equalTo(subjectLabel.snp.trailing).offset(5)
+                make.trailing.equalToSuperview().offset(-10)
+                make.top.equalToSuperview()
+            }
         }
     }
     
