@@ -13,16 +13,16 @@ import GoogleMobileAds
 class AdManager {
     
     
-    static func buildBannerView(viewController: UIViewController) -> GADBannerView {
-        var bannerView: GADBannerView
-        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+    static func buildBannerView(viewController: UIViewController) -> BannerView {
+        var bannerView: BannerView
+        bannerView = BannerView(adSize: AdSizeBanner)
         bannerView.adUnitID = Config.Application.mainBannerAdId
         bannerView.rootViewController = viewController
-        bannerView.load(GADRequest())
+        bannerView.load(Request())
         return bannerView
     }
     
-    static func addBottomBannerViewToView(view: UIView, bannerView: GADBannerView) {
+    static func addBottomBannerViewToView(view: UIView, bannerView: BannerView) {
         bannerView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(bannerView)
         view.addConstraints(

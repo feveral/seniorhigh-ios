@@ -12,7 +12,7 @@ import GoogleMobileAds
 class DesignatedPageController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIViewControllerTransitioningDelegate {
     
     var tableStatus = DesignatedTableStatus()
-    var bannerView: GADBannerView!
+    var bannerView: BannerView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableStatus.cellCount()
@@ -51,7 +51,7 @@ class DesignatedPageController: UIViewController, UITableViewDataSource, UITable
     }
     
     func initialAd() {
-        let bannerView: GADBannerView = AdManager.buildBannerView(viewController: self)
+        let bannerView: BannerView = AdManager.buildBannerView(viewController: self)
         AdManager.addBottomBannerViewToView(view: view, bannerView: bannerView)
     }
     

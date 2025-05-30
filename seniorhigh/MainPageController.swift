@@ -10,23 +10,9 @@ import UIKit
 import GoogleMobileAds
 import AdSupport
 
-class MainPageController: UITabBarController, GADInterstitialDelegate {
-    
-    var interstitial: GADInterstitial!
+class MainPageController: UITabBarController {
     
     override func viewDidLoad() {
-        interstitial = GADInterstitial(adUnitID: Config.Application.interstitialAdId)
-        interstitial.delegate = self
-        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = Config.Application.adTestDevices;
-        let request = GADRequest()
-        interstitial.load(request)
-    }
-
-    func interstitialDidReceiveAd(_ ad: GADInterstitial) {
-        if ad.isReady && Config.Application.isInteritialAdEnable {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 7.0) {
-                ad.present(fromRootViewController: self)
-            }
-        }
+        MobileAds.shared.requestConfiguration.testDeviceIdentifiers = Config.Application.adTestDevices;
     }
 }

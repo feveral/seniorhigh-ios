@@ -224,7 +224,7 @@ class UnifyPageController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func initialAd() {
-        let bannerView: GADBannerView = AdManager.buildBannerView(viewController: self)
+        let bannerView: BannerView = AdManager.buildBannerView(viewController: self)
         AdManager.addBottomBannerViewToView(view: view, bannerView: bannerView)
     }
     
