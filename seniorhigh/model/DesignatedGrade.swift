@@ -42,18 +42,32 @@ class DesignatedGrade {
     
     static func dbRowToDesignatedGrade(row: [Binding?]) -> DesignatedGrade {
         let subjectWeight = DesignatedSubjectWeight()
-        subjectWeight.add(subject: "國", weight: row[4]! as! Double)
-        subjectWeight.add(subject: "英", weight: row[5]! as! Double)
-        subjectWeight.add(subject: "數甲", weight: row[6]! as! Double)
-        subjectWeight.add(subject: "數乙", weight: row[7]! as! Double)
-        subjectWeight.add(subject: "物", weight: row[8]! as! Double)
-        subjectWeight.add(subject: "化", weight: row[9]! as! Double)
-        subjectWeight.add(subject: "生", weight: row[10]! as! Double)
-        subjectWeight.add(subject: "地", weight: row[11]! as! Double)
-        subjectWeight.add(subject: "歷", weight: row[12]! as! Double)
-        subjectWeight.add(subject: "公", weight: row[13]! as! Double)
-        subjectWeight.add(subject: "術", weight: row[14]! as! Double)
-        return DesignatedGrade(year: row[1]! as! String, school: row[2]! as! String, department: row[3]! as! String, subjectWeight: subjectWeight, grade: row[15]! as! Double, people: Int(row[16]! as! Int64))
+        
+        // Handle nullable weights with new English column names
+        if let chinese = row[4] as? Double { subjectWeight.add(subject: "國", weight: Double(chinese)) }
+        if let english = row[5] as? Double { subjectWeight.add(subject: "英", weight: Double(english)) }
+        if let mathAdvance = row[6] as? Double { subjectWeight.add(subject: "數甲", weight: Double(mathAdvance)) }
+        if let mathBasic = row[7] as? Double { subjectWeight.add(subject: "數乙", weight: Double(mathBasic)) }
+        if let mathA = row[8] as? Double { subjectWeight.add(subject: "數A", weight: Double(mathA)) }
+        if let mathB = row[9] as? Double { subjectWeight.add(subject: "數B", weight: Double(mathB)) }
+        if let physical = row[10] as? Double { subjectWeight.add(subject: "物", weight: Double(physical)) }
+        if let chemistry = row[11] as? Double { subjectWeight.add(subject: "化", weight: Double(chemistry)) }
+        if let biological = row[12] as? Double { subjectWeight.add(subject: "生", weight: Double(biological)) }
+        if let geography = row[13] as? Double { subjectWeight.add(subject: "地", weight: Double(geography)) }
+        if let history = row[14] as? Double { subjectWeight.add(subject: "歷", weight: Double(history)) }
+        if let citizen = row[15] as? Double { subjectWeight.add(subject: "公", weight: Double(citizen)) }
+        if let society = row[16] as? Double { subjectWeight.add(subject: "社", weight: Double(society)) }
+        if let nature = row[17] as? Double { subjectWeight.add(subject: "自", weight: Double(nature)) }
+        if let skill = row[18] as? Double { subjectWeight.add(subject: "術", weight: Double(skill)) }
+        
+        return DesignatedGrade(
+            year: String(row[0]! as! Int64), 
+            school: row[1]! as! String, 
+            department: row[2]! as! String, 
+            subjectWeight: subjectWeight, 
+            grade: DBUtils.toDouble(row[19]),
+            people: Int(row[3]! as! Int64)
+        )
     }
     
     static func sortHighToLow(grades:[DesignatedGrade]) -> [DesignatedGrade] {
@@ -145,7 +159,7 @@ class DesignatedGrade {
         do {
             var grades: [DesignatedGrade] = []
             let db: Connection = GradeDatabase.getDatabaseConnection()!
-            let sql = "SELECT * from Designated where year='\(year)' AND mathA>0 AND biological==0"
+            let sql = "SELECT * from Designated where year='\(year)' AND (mathA>0 OR mathAdvance>0) AND biological IS NULL"
             for row in try db.prepare(sql) {
                 grades.append(DesignatedGrade.dbRowToDesignatedGrade(row: row))
             }

@@ -36,12 +36,34 @@ class BasicGrade {
     
     static func dbRowToBasicGrade(row: [Binding?]) -> BasicGrade {
         let subjectGrade = BasicSubjectGrade()
-        subjectGrade.add(subject: row[4]! as! String, grade: Int(row[5]! as! Int64))
-        subjectGrade.add(subject: row[6]! as! String, grade: Int(row[7]! as! Int64))
-        subjectGrade.add(subject: row[8]! as! String, grade: Int(row[9]! as! Int64))
-        subjectGrade.add(subject: row[10]! as! String, grade: Int(row[11]! as! Int64))
-        subjectGrade.add(subject: row[12]! as! String, grade: Int(row[13]! as! Int64))
-        return BasicGrade(year: row[1]! as! String, school: row[2]! as! String, department: row[3]! as! String, subjectGrade: subjectGrade, people: Int(row[14]! as! Int64))
+        
+        // Handle nullable subject/grade pairs
+        if let subject1 = row[4] as? String, let grade1 = row[5] as? Double {
+            subjectGrade.add(subject: subject1, grade: grade1)
+        }
+        if let subject2 = row[6] as? String, let grade2 = row[7] as? Double {
+            subjectGrade.add(subject: subject2, grade: grade2)
+        }
+        if let subject3 = row[8] as? String, let grade3 = row[9] as? Double {
+            subjectGrade.add(subject: subject3, grade: grade3)
+        }
+        if let subject4 = row[10] as? String, let grade4 = row[11] as? Double {
+            subjectGrade.add(subject: subject4, grade: grade4)
+        }
+        if let subject5 = row[12] as? String, let grade5 = row[13] as? Double {
+            subjectGrade.add(subject: subject5, grade: grade5)
+        }
+        if let subject6 = row[14] as? String, let grade6 = row[15] as? Double {
+            subjectGrade.add(subject: subject6, grade: grade6)
+        }
+        
+        return BasicGrade(
+            year: String(row[0]! as! Int64),
+            school: row[1]! as! String,
+            department: row[2]! as! String, 
+            subjectGrade: subjectGrade, 
+            people: Int(row[3]! as! Int64)
+        )
     }
     
     static func findAllSchools(year: String) -> [String] {
@@ -114,13 +136,13 @@ class BasicGrade {
 class BasicSubjectGrade {
     
     var gradeOrder = 0
-    private var subjectGrades: [Int:(String, Int)] = [:]
+    private var subjectGrades: [Int:(String, Double)] = [:]
     
     public var order: Int{
         return gradeOrder
     }
     
-    func add(subject: String, grade: Int) {
+    func add(subject: String, grade: Double) {
         if (subject != "") {
             gradeOrder = gradeOrder + 1
             let t = (subject, grade)
@@ -135,7 +157,7 @@ class BasicSubjectGrade {
         return ""
     }
     
-    func getGrade(order: Int) -> Int {
+    func getGrade(order: Int) -> Double {
         if (gradeOrder >= order && order > 0) {
             return subjectGrades[order]!.1
         }

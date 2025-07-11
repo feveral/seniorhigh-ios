@@ -52,7 +52,7 @@ class BasicDialog: AlertDialog {
     
     public func setSecondYearGrade(grade: BasicGrade) {
         self._secondYearGrade = grade
-        if (!grade.isEmpty) {
+        if (!grade.isEmpty && false) { // Hide second year UI, keep code for future use
             addYearLabel(grade: grade)
             addGradeLabel(grade: grade)
         }
@@ -62,6 +62,14 @@ class BasicDialog: AlertDialog {
     private func addDialogHeight() {
         dialogHeight += 20
         refreshContainer()
+    }
+    
+    private func formatGradeValue(_ grade: Double) -> String {
+        if grade.truncatingRemainder(dividingBy: 1) == 0 {
+            return String(Int(grade))
+        } else {
+            return String(grade)
+        }
     }
     
     private func refreshContainer() {
@@ -94,17 +102,22 @@ class BasicDialog: AlertDialog {
     
     private func addGradeLabel(grade: BasicGrade) {
         let gradePromptString = ["篩選順序一", "篩選順序二", "篩選順序三", "篩選順序四", "篩選順序五"]
+        if grade.subjectGrade.order == 0 {
+            return
+        }
         for i in 1...grade.subjectGrade.order {
             let container = UIView()
             let gradePromptLabel = UILabel(frame: CGRect(x: 0, y: 0, width: dialogWidth, height: 3))
             gradePromptLabel.textColor = UIColor.black
             gradePromptLabel.text = gradePromptString[i-1]
+            gradePromptLabel.numberOfLines = 0
+            gradePromptLabel.lineBreakMode = .byWordWrapping
             let subjectLabel = UILabel(frame: CGRect(x: 0, y: 0, width: dialogWidth, height: 3))
             subjectLabel.textColor = UIColor.black
             subjectLabel.text = grade.subjectGrade.getSubject(order: i)
             subjectLabel.textAlignment = NSTextAlignment.center
             let gradeLabel = UILabel(frame: CGRect(x: 0, y: 0, width: dialogWidth, height: 3))
-            gradeLabel.text = String(grade.subjectGrade.getGrade(order: i))
+            gradeLabel.text = formatGradeValue(grade.subjectGrade.getGrade(order: i))
             gradeLabel.textColor = #colorLiteral(red: 1, green: 0.662745098, blue: 0.07843137255, alpha: 1)
             gradeLabel.textAlignment = NSTextAlignment.center
             container.addSubview(gradePromptLabel)
@@ -127,7 +140,7 @@ class BasicDialog: AlertDialog {
             }
             subjectLabel.snp.makeConstraints { make in
                 make.leading.equalTo(gradePromptLabel.snp.trailing).offset(5)
-                make.width.equalTo(containerWidth * 0.55)
+                make.width.equalTo(containerWidth * 0.45)
                 make.top.equalToSuperview()
             }
             gradeLabel.snp.makeConstraints { make in

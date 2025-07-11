@@ -37,7 +37,13 @@ class UnifyGrade {
     }
     
     static func dbRowToUnifyGrade(row: [Binding?]) -> UnifyGrade {
-        return UnifyGrade(year: row[1]! as! String, school: row[2]! as! String, department: row[3]! as! String, groupName: row[4]! as! String, grade: row[5]! as! Double)
+        return UnifyGrade(
+            year: String(row[0]! as! Int64),
+            school: row[1]! as! String,
+            department: row[2]! as! String, 
+            groupName: row[4]! as! String, 
+            grade: DBUtils.toDouble(row[3])
+        )
     }
     
     static func findAllSchools(year: String) -> [String] {

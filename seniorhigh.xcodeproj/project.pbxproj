@@ -10,7 +10,6 @@
 		672529BFD5AC644B732D9C98 /* Pods_seniorhighTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D9A7E6503C709CCEDA465B4 /* Pods_seniorhighTests.framework */; };
 		76BA9A78F45D3D683EB12A42 /* Pods_seniorhighUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6C651E54A89EE6EC958DCA7 /* Pods_seniorhighUITests.framework */; };
 		A988191BF076062219AE05E3 /* Pods_seniorhigh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D1DF8A26CEE5D3D31935020 /* Pods_seniorhigh.framework */; };
-		B00C18762971B0EE00884F0B /* grade_2023_0113.db in Resources */ = {isa = PBXBuildFile; fileRef = B00C18752971B0EE00884F0B /* grade_2023_0113.db */; };
 		B00C18782971BD9800884F0B /* UIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00C18772971BD9800884F0B /* UIUtils.swift */; };
 		B04B7B89230A706000553B83 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04B7B88230A706000553B83 /* SearchTextField.swift */; };
 		B04B7B8B230A777500553B83 /* DialogPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04B7B8A230A777500553B83 /* DialogPresentationController.swift */; };
@@ -20,7 +19,6 @@
 		B04D8B1E2316508C004FC673 /* FavoritePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B04D8B1D2316508C004FC673 /* FavoritePage.storyboard */; };
 		B04D8B20231650D1004FC673 /* UserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04D8B1F231650D1004FC673 /* UserDatabase.swift */; };
 		B04D8B2223165140004FC673 /* FavoritePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04D8B2123165140004FC673 /* FavoritePageController.swift */; };
-		B06212DF251E670D00B794B2 /* grade_2020_0925.db in Resources */ = {isa = PBXBuildFile; fileRef = B06212DE251E670D00B794B2 /* grade_2020_0925.db */; };
 		B081B380231F8132009267ED /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = B081B37F231F8132009267ED /* Favorite.swift */; };
 		B081B382231F82BE009267ED /* FavoriteTableStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B081B381231F82BE009267ED /* FavoriteTableStatus.swift */; };
 		B081B384231FABED009267ED /* AlertDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B081B383231FABED009267ED /* AlertDialog.swift */; };
@@ -29,6 +27,8 @@
 		B0B865D022F4B4AE00E90F98 /* DesignatedPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0B865CF22F4B4AE00E90F98 /* DesignatedPage.storyboard */; };
 		B0B865D422F4B67B00E90F98 /* BasicPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0B865D322F4B67B00E90F98 /* BasicPage.storyboard */; };
 		B0B865D622F4B68F00E90F98 /* UnifyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0B865D522F4B68F00E90F98 /* UnifyPage.storyboard */; };
+		B0CB28392E20E663004D796D /* grade_2025_0706.db in Resources */ = {isa = PBXBuildFile; fileRef = B0CB28382E20E663004D796D /* grade_2025_0706.db */; };
+		B0CB283C2E21049A004D796D /* DBUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CB283B2E210492004D796D /* DBUtils.swift */; };
 		B0CE42ED230881910087084E /* DesignatedSearchPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CE42EC230881910087084E /* DesignatedSearchPageController.swift */; };
 		B0D3A6C822E2192000D218E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D3A6C722E2192000D218E2 /* AppDelegate.swift */; };
 		B0D3A6CA22E2192000D218E2 /* DesignatedPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D3A6C922E2192000D218E2 /* DesignatedPageController.swift */; };
@@ -84,7 +84,6 @@
 		7FC86A39B3A5D940697B0F12 /* Pods-seniorhighUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seniorhighUITests.release.xcconfig"; path = "Target Support Files/Pods-seniorhighUITests/Pods-seniorhighUITests.release.xcconfig"; sourceTree = "<group>"; };
 		89C8DDE41E827A486D2D0B74 /* Pods-seniorhigh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seniorhigh.release.xcconfig"; path = "Target Support Files/Pods-seniorhigh/Pods-seniorhigh.release.xcconfig"; sourceTree = "<group>"; };
 		8D9A7E6503C709CCEDA465B4 /* Pods_seniorhighTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seniorhighTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B00C18752971B0EE00884F0B /* grade_2023_0113.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = grade_2023_0113.db; sourceTree = "<group>"; };
 		B00C18772971BD9800884F0B /* UIUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtils.swift; sourceTree = "<group>"; };
 		B04B7B88230A706000553B83 /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		B04B7B8A230A777500553B83 /* DialogPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogPresentationController.swift; sourceTree = "<group>"; };
@@ -94,7 +93,6 @@
 		B04D8B1D2316508C004FC673 /* FavoritePage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavoritePage.storyboard; sourceTree = "<group>"; };
 		B04D8B1F231650D1004FC673 /* UserDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDatabase.swift; sourceTree = "<group>"; };
 		B04D8B2123165140004FC673 /* FavoritePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePageController.swift; sourceTree = "<group>"; };
-		B06212DE251E670D00B794B2 /* grade_2020_0925.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = grade_2020_0925.db; sourceTree = "<group>"; };
 		B081B37F231F8132009267ED /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		B081B381231F82BE009267ED /* FavoriteTableStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableStatus.swift; sourceTree = "<group>"; };
 		B081B383231FABED009267ED /* AlertDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDialog.swift; sourceTree = "<group>"; };
@@ -103,6 +101,8 @@
 		B0B865CF22F4B4AE00E90F98 /* DesignatedPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DesignatedPage.storyboard; sourceTree = "<group>"; };
 		B0B865D322F4B67B00E90F98 /* BasicPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BasicPage.storyboard; sourceTree = "<group>"; };
 		B0B865D522F4B68F00E90F98 /* UnifyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UnifyPage.storyboard; sourceTree = "<group>"; };
+		B0CB28382E20E663004D796D /* grade_2025_0706.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = grade_2025_0706.db; sourceTree = "<group>"; };
+		B0CB283B2E210492004D796D /* DBUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBUtils.swift; sourceTree = "<group>"; };
 		B0CE42EC230881910087084E /* DesignatedSearchPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignatedSearchPageController.swift; sourceTree = "<group>"; };
 		B0D3A6C422E2192000D218E2 /* seniorhigh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = seniorhigh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0D3A6C722E2192000D218E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -276,12 +276,11 @@
 				B0D3A6C722E2192000D218E2 /* AppDelegate.swift */,
 				B0D3A6CB22E2192000D218E2 /* Main.storyboard */,
 				B0F963D02300C44700C77C66 /* MainPageController.swift */,
-				B00C18752971B0EE00884F0B /* grade_2023_0113.db */,
-				B06212DE251E670D00B794B2 /* grade_2020_0925.db */,
+				B0F963BF22FE7B1100C77C66 /* Config.swift */,
+				B0CB28382E20E663004D796D /* grade_2025_0706.db */,
 				B0D3A6CE22E2192100D218E2 /* Assets.xcassets */,
 				B0D3A6D022E2192100D218E2 /* LaunchScreen.storyboard */,
 				B0D3A6D322E2192100D218E2 /* Info.plist */,
-				B0F963BF22FE7B1100C77C66 /* Config.swift */,
 			);
 			path = seniorhigh;
 			sourceTree = "<group>";
@@ -343,6 +342,7 @@
 		B0F963CB2300B33F00C77C66 /* database */ = {
 			isa = PBXGroup;
 			children = (
+				B0CB283B2E210492004D796D /* DBUtils.swift */,
 				B0F963CC2300B35200C77C66 /* GradeDatabase.swift */,
 				B04D8B1F231650D1004FC673 /* UserDatabase.swift */,
 			);
@@ -461,12 +461,11 @@
 				B0D3A6D222E2192100D218E2 /* LaunchScreen.storyboard in Resources */,
 				B0B865D022F4B4AE00E90F98 /* DesignatedPage.storyboard in Resources */,
 				B04D8B1E2316508C004FC673 /* FavoritePage.storyboard in Resources */,
-				B00C18762971B0EE00884F0B /* grade_2023_0113.db in Resources */,
 				B0B865D422F4B67B00E90F98 /* BasicPage.storyboard in Resources */,
 				B0D3A6CF22E2192100D218E2 /* Assets.xcassets in Resources */,
 				B0D3A6CD22E2192000D218E2 /* Main.storyboard in Resources */,
 				B0B865D622F4B68F00E90F98 /* UnifyPage.storyboard in Resources */,
-				B06212DF251E670D00B794B2 /* grade_2020_0925.db in Resources */,
+				B0CB28392E20E663004D796D /* grade_2025_0706.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,6 +617,7 @@
 				B0F963D92305B17200C77C66 /* BasicDialog.swift in Sources */,
 				B04D8B20231650D1004FC673 /* UserDatabase.swift in Sources */,
 				B00C18782971BD9800884F0B /* UIUtils.swift in Sources */,
+				B0CB283C2E21049A004D796D /* DBUtils.swift in Sources */,
 				B04B7B8D230AD0BB00553B83 /* BasicSearchPageController.swift in Sources */,
 				B0F963DB2307C9E000C77C66 /* UnifyPageController.swift in Sources */,
 				B0B865C722F271DC00E90F98 /* BasicPageController.swift in Sources */,
