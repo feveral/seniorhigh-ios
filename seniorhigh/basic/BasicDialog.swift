@@ -116,6 +116,8 @@ class BasicDialog: AlertDialog {
             subjectLabel.textColor = UIColor.black
             subjectLabel.text = grade.subjectGrade.getSubject(order: i)
             subjectLabel.textAlignment = NSTextAlignment.center
+            subjectLabel.numberOfLines = 0
+            subjectLabel.lineBreakMode = .byWordWrapping
             let gradeLabel = UILabel(frame: CGRect(x: 0, y: 0, width: dialogWidth, height: 3))
             gradeLabel.text = formatGradeValue(grade.subjectGrade.getGrade(order: i))
             gradeLabel.textColor = #colorLiteral(red: 1, green: 0.662745098, blue: 0.07843137255, alpha: 1)
