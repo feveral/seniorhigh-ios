@@ -38,7 +38,7 @@ class BasicSearchPageController: UIViewController,UITableViewDataSource, UITable
     
     @objc func textFieldDidChange(_ textField: UITextField) {
         if let text=searchTextField.text {
-            gradeList = BasicGrade.findByKeyword(year: Config.Application.designatedFirstYear, keyWord: text)
+            gradeList = BasicGrade.findByKeyword(year: Config.Application.basicFirstYear, keyWord: text)
             reloadTable()
         }
     }
