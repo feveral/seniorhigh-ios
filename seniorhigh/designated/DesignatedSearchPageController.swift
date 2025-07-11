@@ -47,6 +47,11 @@ class DesignatedSearchPageController: UIViewController,UITableViewDataSource, UI
         initialUI()
         initialAd()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        searchTextField.becomeFirstResponder()
+    }
 
     func initialAd() {
         let bannerView: BannerView = AdManager.buildBannerView(viewController: self)
@@ -67,6 +72,7 @@ class DesignatedSearchPageController: UIViewController,UITableViewDataSource, UI
         setVisibility()
         hideKeyboardWhenTappedAround()
         tableView.backgroundColor = UIColor.white
+        tableView.keyboardDismissMode = .onDrag
     }
     
     func setVisibility() {

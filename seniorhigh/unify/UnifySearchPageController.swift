@@ -49,6 +49,11 @@ class UnifySearchPageController: UIViewController,UITableViewDataSource, UITable
         initialAd()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        searchTextField.becomeFirstResponder()
+    }
+    
     func initialUI() {
         searchTextField.setPlaceholder("搜尋統測成績")
         self.navigationItem.titleView = searchTextField
@@ -63,6 +68,7 @@ class UnifySearchPageController: UIViewController,UITableViewDataSource, UITable
         setVisibility()
         hideKeyboardWhenTappedAround()
         tableView.backgroundColor = UIColor.white
+        tableView.keyboardDismissMode = .onDrag
     }
     
     func setVisibility() {
