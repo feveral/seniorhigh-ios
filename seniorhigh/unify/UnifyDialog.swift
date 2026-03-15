@@ -12,16 +12,21 @@ import UIKit
 class UnifyDialog: AlertDialog {
     
     private var _containerView = UIView()
+    private var _cardContentView = UIView()
     private var _containerStackView = UIStackView()
     private var _firstYearGrades: [UnifyGrade] = [UnifyGrade()]
     private var _secondYearGrades: [UnifyGrade] = [UnifyGrade()]
-    private var _favoriteButton = UIImageView()
+    private var _favoriteButton = UIButton(type: .system)
     
     init() {
         super.init(nibName: nil, bundle: nil)
-        _containerStackView.alignment = .center
-        _containerStackView.distribution = .fillEqually
+        _containerStackView.alignment = .fill
+        _containerStackView.distribution = .fill
         _containerStackView.axis = .vertical
+        _containerStackView.spacing = 12
+        _containerStackView.isLayoutMarginsRelativeArrangement = true
+        _containerStackView.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        _containerStackView.translatesAutoresizingMaskIntoConstraints = false
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -43,6 +48,7 @@ class UnifyDialog: AlertDialog {
     public func setFirstYearGrades(grades: [UnifyGrade]) {
         self._firstYearGrades = grades
         if (!grades.isEmpty) {
+            addExamBadge(text: "統測")
             addTitleLabel(grade: grades[0])
             addYearLabel(grade: grades[0])
             addGradeLabel(grades: grades)
@@ -58,96 +64,156 @@ class UnifyDialog: AlertDialog {
         addFavoriteButton()
     }
     
-    private func addDialogHeight() {
-        dialogHeight += 30
-        refreshContainer()
-    }
-    
-    private func refreshContainer() {
-        _containerStackView.frame = CGRect(x: 12.5, y: 12.5, width: dialogWidth-25, height: dialogHeight-25)
-        _containerView.frame = CGRect(x: 30, y: (UIScreen.main.bounds.height-dialogHeight) / 2, width: dialogWidth, height: self.dialogHeight)
-        _containerView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        _containerView.layer.cornerRadius = 20.0
-        _containerView.clipsToBounds = true
-    }
-    
     private func addTitleLabel(grade: UnifyGrade) {
-        let title = UILabel(frame: CGRect(x: 0, y: 0, width: dialogWidth, height: 3))
+        let title = UILabel()
         title.text = "\(grade.school) \(grade.department)"
-        title.textColor = .black
-        title.numberOfLines = 2
-        addDialogHeight()
+        title.textColor = .white
+        title.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
+        title.numberOfLines = 0
         _containerStackView.addArrangedSubview(title)
     }
     
     private func addYearLabel(grade: UnifyGrade) {
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: dialogWidth, height: 3))
-        label.text = "---\(grade.year)年度---"
-        label.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-        addDialogHeight()
+        let label = UILabel()
+        label.text = "\(grade.year) 年度"
+        label.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+        label.textColor = Theme.mutedText
         _containerStackView.addArrangedSubview(label)
     }
     
     private func addGradeLabel(grades: [UnifyGrade]) {
         for grade in grades {
-            let stack = UIStackView()
-            let groupPromptLabel = UILabel(frame: CGRect(x: 0, y: 0, width: dialogWidth, height: 3))
-            let groupLabel = UILabel(frame: CGRect(x: 0, y: 0, width: dialogWidth, height: 3))
-            let gradePromptLabel = UILabel(frame: CGRect(x: 0, y: 0, width: dialogWidth, height: 3))
-            let gradeLabel = UILabel(frame: CGRect(x: 0, y: 0, width: dialogWidth, height: 3))
-            groupPromptLabel.textColor = UIColor.black
-            groupPromptLabel.text = "類群 "
+            let container = buildRowContainer()
+            let row = UIStackView()
+            row.axis = .vertical
+            row.spacing = 4
+            row.translatesAutoresizingMaskIntoConstraints = false
+            let groupRow = UIStackView()
+            groupRow.axis = .horizontal
+            groupRow.alignment = .top
+            groupRow.spacing = 8
+            let groupLabel = UILabel()
             groupLabel.text = grade.groupName
-            groupLabel.textColor = #colorLiteral(red: 1, green: 0.662745098, blue: 0.07843137255, alpha: 1)
-            gradePromptLabel.textColor = UIColor.black
-            gradePromptLabel.text = "     總分 "
-            gradeLabel.text = String(grade.grade)
-            gradeLabel.textColor = #colorLiteral(red: 1, green: 0.662745098, blue: 0.07843137255, alpha: 1)
-            stack.axis = .horizontal
-            stack.addArrangedSubview(groupPromptLabel)
-            stack.addArrangedSubview(groupLabel)
-            stack.addArrangedSubview(gradePromptLabel)
-            stack.addArrangedSubview(gradeLabel)
-            addDialogHeight()
-            _containerStackView.addArrangedSubview(stack)
+            groupLabel.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+            groupLabel.textColor = Theme.accent
+            groupLabel.numberOfLines = 2
+            let badge = UILabel()
+            badge.text = "類群"
+            badge.font = UIFont.systemFont(ofSize: 13, weight: .medium)
+            badge.textColor = Theme.mutedText
+            groupRow.addArrangedSubview(badge)
+            groupRow.addArrangedSubview(groupLabel)
+            let scoreLabel = UILabel()
+            scoreLabel.text = "總分 \(formatScore(grade.grade))"
+            scoreLabel.font = UIFont.monospacedDigitSystemFont(ofSize: 19, weight: .semibold)
+            scoreLabel.textColor = .white
+            scoreLabel.textAlignment = .left
+            row.addArrangedSubview(groupRow)
+            row.addArrangedSubview(scoreLabel)
+            container.addSubview(row)
+            NSLayoutConstraint.activate([
+                row.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 10),
+                row.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -10),
+                row.topAnchor.constraint(equalTo: container.topAnchor, constant: 10),
+                row.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -10)
+            ])
+            _containerStackView.addArrangedSubview(container)
         }
     }
     
     func addFavoriteButton() {
-        let stackView = UIStackView(frame: CGRect(x:0, y:0, width: dialogWidth, height: 20))
-        stackView.distribution = .fill
-        stackView.axis = .horizontal
-        stackView.alignment = .trailing
-        _favoriteButton.frame = CGRect(x:0, y:0, width: 20, height: 20)
-        _favoriteButton.image = UIImage(named: "ic_favorite_border")?.withRenderingMode(.alwaysTemplate)
-        _favoriteButton.tintColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(favoriteButtonClicked(tapGestureRecognizer:)))
-        _favoriteButton.isUserInteractionEnabled = true
-        _favoriteButton.addGestureRecognizer(tapGestureRecognizer)
-        stackView.addArrangedSubview(_favoriteButton)
-        _containerStackView.addArrangedSubview(stackView)
+        _favoriteButton.setTitle("加入收藏", for: .normal)
+        _favoriteButton.setTitleColor(.white, for: .normal)
+        _favoriteButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        _favoriteButton.setImage(UIImage(named: "ic_favorite_border")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        _favoriteButton.tintColor = .white
+        _favoriteButton.backgroundColor = Theme.accent
+        _favoriteButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: -4, bottom: 0, right: 4)
+        _favoriteButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        _favoriteButton.semanticContentAttribute = .forceLeftToRight
+        _favoriteButton.addTarget(self, action: #selector(favoriteButtonClicked), for: .touchUpInside)
+        attachActionButtons(favoriteButton: _favoriteButton, to: _containerStackView)
     }
     
     func refreshFavoriteStatus() {
         let isExist = Favorite.isFavoriteExist(favorite: Favorite(examine: Config.Text.UNIFY, school: _firstYearGrades[0].school, department: _firstYearGrades[0].department))
         if (isExist) {
-            _favoriteButton.image = UIImage(named: "ic_favorite")?.withRenderingMode(.alwaysTemplate)
+            _favoriteButton.setImage(UIImage(named: "ic_favorite")?.withRenderingMode(.alwaysTemplate), for: .normal)
         } else {
-            _favoriteButton.image = UIImage(named: "ic_favorite_border")?.withRenderingMode(.alwaysTemplate)
+            _favoriteButton.setImage(UIImage(named: "ic_favorite_border")?.withRenderingMode(.alwaysTemplate), for: .normal)
         }
     }
     
-    @objc func favoriteButtonClicked(tapGestureRecognizer: UITapGestureRecognizer) {
+    @objc func favoriteButtonClicked() {
         Favorite.saveOrDelete(favorite: Favorite(examine: Config.Text.UNIFY, school: _firstYearGrades[0].school, department: _firstYearGrades[0].department))
         refreshFavoriteStatus()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        refreshContainer()
-        _containerView.addSubview(_containerStackView)
-        addCloseButton()
-        view.addSubview(_containerView)
+        configureContainerView()
         refreshFavoriteStatus()
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        Theme.applyCardShadow(to: _containerView.layer, cornerRadius: 28, shadowRect: _containerView.bounds)
+    }
+
+    private func configureContainerView() {
+        view.addSubview(_containerView)
+        _containerView.translatesAutoresizingMaskIntoConstraints = false
+        _containerView.layer.cornerRadius = 28
+        _containerView.layer.masksToBounds = false
+        NSLayoutConstraint.activate([
+            _containerView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            _containerView.leadingAnchor.constraint(greaterThanOrEqualTo: view.leadingAnchor, constant: 20),
+            _containerView.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor, constant: -20),
+            _containerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            _containerView.widthAnchor.constraint(lessThanOrEqualToConstant: 460)
+        ])
+        _cardContentView.translatesAutoresizingMaskIntoConstraints = false
+        _cardContentView.backgroundColor = Theme.cardBackground
+        _cardContentView.layer.cornerRadius = 28
+        _cardContentView.layer.masksToBounds = true
+        _containerView.addSubview(_cardContentView)
+        NSLayoutConstraint.activate([
+            _cardContentView.leadingAnchor.constraint(equalTo: _containerView.leadingAnchor),
+            _cardContentView.trailingAnchor.constraint(equalTo: _containerView.trailingAnchor),
+            _cardContentView.topAnchor.constraint(equalTo: _containerView.topAnchor),
+            _cardContentView.bottomAnchor.constraint(equalTo: _containerView.bottomAnchor)
+        ])
+        _cardContentView.addSubview(_containerStackView)
+        NSLayoutConstraint.activate([
+            _containerStackView.leadingAnchor.constraint(equalTo: _cardContentView.leadingAnchor),
+            _containerStackView.trailingAnchor.constraint(equalTo: _cardContentView.trailingAnchor),
+            _containerStackView.topAnchor.constraint(equalTo: _cardContentView.topAnchor),
+            _containerStackView.bottomAnchor.constraint(equalTo: _cardContentView.bottomAnchor)
+        ])
+    }
+
+    private func buildRowContainer() -> UIView {
+        let container = UIView()
+        container.backgroundColor = UIColor.white.withAlphaComponent(0.05)
+        container.layer.cornerRadius = 18
+        container.translatesAutoresizingMaskIntoConstraints = false
+        return container
+    }
+
+    private func formatScore(_ value: Double) -> String {
+        return value.truncatingRemainder(dividingBy: 1) == 0 ? String(format: "%.0f", value) : String(format: "%.2f", value)
+    }
+
+    private func addExamBadge(text: String) {
+        let badge = UILabel()
+        badge.text = text
+        badge.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+        badge.textAlignment = .center
+        badge.textColor = Theme.accent
+        badge.backgroundColor = Theme.accent.withAlphaComponent(0.12)
+        badge.layer.cornerRadius = 13
+        badge.layer.masksToBounds = true
+        badge.heightAnchor.constraint(equalToConstant: 26).isActive = true
+        _containerStackView.addArrangedSubview(badge)
     }
 }
