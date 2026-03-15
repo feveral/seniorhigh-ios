@@ -23,9 +23,9 @@ class DesignatedDialog: AlertDialog {
         _containerStackView.alignment = .fill
         _containerStackView.distribution = .fill
         _containerStackView.axis = .vertical
-        _containerStackView.spacing = 16
+        _containerStackView.spacing = 12
         _containerStackView.isLayoutMarginsRelativeArrangement = true
-        _containerStackView.layoutMargins = UIEdgeInsets(top: 28, left: 24, bottom: 28, right: 24)
+        _containerStackView.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         _containerStackView.translatesAutoresizingMaskIntoConstraints = false
     }
     
@@ -70,7 +70,7 @@ class DesignatedDialog: AlertDialog {
         let title = UILabel()
         title.text = "\(grade.school) \(grade.department)"
         title.textColor = .white
-        title.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
+        title.font = UIFont.systemFont(ofSize: 21, weight: .semibold)
         title.numberOfLines = 0
         _containerStackView.addArrangedSubview(title)
     }
@@ -78,7 +78,7 @@ class DesignatedDialog: AlertDialog {
     private func addYearLabel(grade: DesignatedGrade) {
         let label = UILabel()
         label.text = "\(grade.year) 年度"
-        label.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
         label.textColor = Theme.mutedText
         label.textAlignment = .left
         _containerStackView.addArrangedSubview(label)
@@ -89,7 +89,7 @@ class DesignatedDialog: AlertDialog {
         let container = buildRowContainer()
         let title = UILabel()
         title.text = "檢定權重"
-        title.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+        title.font = UIFont.systemFont(ofSize: 14, weight: .medium)
         title.textColor = Theme.mutedText
         let weightsStack = UIStackView()
         weightsStack.axis = .vertical
@@ -99,7 +99,7 @@ class DesignatedDialog: AlertDialog {
             let label = UILabel()
             label.text = "\(subject)  ·  \(weight)"
             label.textColor = .white
-            label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+            label.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
             weightsStack.addArrangedSubview(label)
         }
         let contentStack = UIStackView(arrangedSubviews: [title, weightsStack])
@@ -108,10 +108,10 @@ class DesignatedDialog: AlertDialog {
         contentStack.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(contentStack)
         NSLayoutConstraint.activate([
-            contentStack.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 12),
-            contentStack.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -12),
-            contentStack.topAnchor.constraint(equalTo: container.topAnchor, constant: 12),
-            contentStack.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -12)
+            contentStack.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 10),
+            contentStack.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -10),
+            contentStack.topAnchor.constraint(equalTo: container.topAnchor, constant: 10),
+            contentStack.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -10)
         ])
         _containerStackView.addArrangedSubview(container)
     }
@@ -126,7 +126,7 @@ class DesignatedDialog: AlertDialog {
         let row = UIStackView()
         row.axis = .horizontal
         row.alignment = .center
-        row.spacing = 12
+        row.spacing = 10
         row.distribution = .fillEqually
         row.translatesAutoresizingMaskIntoConstraints = false
         for (title, value) in stats {
@@ -134,10 +134,10 @@ class DesignatedDialog: AlertDialog {
         }
         container.addSubview(row)
         NSLayoutConstraint.activate([
-            row.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 12),
-            row.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -12),
-            row.topAnchor.constraint(equalTo: container.topAnchor, constant: 12),
-            row.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -12)
+            row.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 10),
+            row.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -10),
+            row.topAnchor.constraint(equalTo: container.topAnchor, constant: 10),
+            row.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -10)
         ])
         _containerStackView.addArrangedSubview(container)
     }

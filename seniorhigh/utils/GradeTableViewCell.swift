@@ -14,9 +14,9 @@ class GradeTableViewCell: UITableViewCell {
     @IBOutlet var departmentLabel: UILabel!
     @IBOutlet var gradeLabel: UILabel!
 
-    private let inset = UIEdgeInsets(top: 6, left: 18, bottom: 6, right: 18)
-    private let cornerRadius: CGFloat = 18
-    private let minimumContentHeight: CGFloat = 88
+    private let inset = UIEdgeInsets(top: 4, left: 16, bottom: 4, right: 16)
+    private let cornerRadius: CGFloat = 16
+    private let minimumContentHeight: CGFloat = 80
     private let gradeLabelRightPadding: CGFloat = 24
     private let cardView = UIView()
 
@@ -63,14 +63,14 @@ class GradeTableViewCell: UITableViewCell {
             cardView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -inset.bottom),
             cardView.heightAnchor.constraint(greaterThanOrEqualToConstant: minimumContentHeight),
 
-            schoolLabel.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 18),
-            schoolLabel.trailingAnchor.constraint(equalTo: gradeLabel.leadingAnchor, constant: -2),
-            schoolLabel.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 14),
+            schoolLabel.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 16),
+            schoolLabel.trailingAnchor.constraint(equalTo: gradeLabel.leadingAnchor, constant: -6),
+            schoolLabel.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 12),
 
             departmentLabel.leadingAnchor.constraint(equalTo: schoolLabel.leadingAnchor),
             departmentLabel.trailingAnchor.constraint(equalTo: schoolLabel.trailingAnchor),
-            departmentLabel.topAnchor.constraint(equalTo: schoolLabel.bottomAnchor, constant: 6),
-            departmentLabel.bottomAnchor.constraint(lessThanOrEqualTo: cardView.bottomAnchor, constant: -14),
+            departmentLabel.topAnchor.constraint(equalTo: schoolLabel.bottomAnchor, constant: 4),
+            departmentLabel.bottomAnchor.constraint(lessThanOrEqualTo: cardView.bottomAnchor, constant: -12),
 
             gradeLabel.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -gradeLabelRightPadding),
             gradeLabel.centerYAnchor.constraint(equalTo: cardView.centerYAnchor),
