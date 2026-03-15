@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D4C52CF2A99983D3F8AF6A6 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AE343FDA9DF365E23D3A5A /* Theme.swift */; };
 		672529BFD5AC644B732D9C98 /* Pods_seniorhighTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D9A7E6503C709CCEDA465B4 /* Pods_seniorhighTests.framework */; };
 		76BA9A78F45D3D683EB12A42 /* Pods_seniorhighUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6C651E54A89EE6EC958DCA7 /* Pods_seniorhighUITests.framework */; };
 		A988191BF076062219AE05E3 /* Pods_seniorhigh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D1DF8A26CEE5D3D31935020 /* Pods_seniorhigh.framework */; };
 		B00C18782971BD9800884F0B /* UIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00C18772971BD9800884F0B /* UIUtils.swift */; };
+		B01961492F61A9770090D28F /* grade_2026_0311.db in Resources */ = {isa = PBXBuildFile; fileRef = B01961482F61A9770090D28F /* grade_2026_0311.db */; };
 		B04B7B89230A706000553B83 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04B7B88230A706000553B83 /* SearchTextField.swift */; };
 		B04B7B8B230A777500553B83 /* DialogPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04B7B8A230A777500553B83 /* DialogPresentationController.swift */; };
 		B04B7B8D230AD0BB00553B83 /* BasicSearchPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04B7B8C230AD0BB00553B83 /* BasicSearchPageController.swift */; };
@@ -57,6 +59,7 @@
 		B0F963DF2307CC2200C77C66 /* UnifyDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F963DE2307CC2200C77C66 /* UnifyDialog.swift */; };
 		B0F963E12307CC9700C77C66 /* UnifyGrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F963E02307CC9700C77C66 /* UnifyGrade.swift */; };
 		B0F963E3230823A200C77C66 /* UnifyGroupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F963E2230823A200C77C66 /* UnifyGroupButton.swift */; };
+		DE10DCE8FA42E442446440E5 /* SchoolListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE455A5AB9AE9D28F17E5B3 /* SchoolListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +80,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0DE455A5AB9AE9D28F17E5B3 /* SchoolListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolListTableViewCell.swift; sourceTree = "<group>"; };
+		13AE343FDA9DF365E23D3A5A /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		13DAA6B82CCE4C1E44E85214 /* Pods-seniorhighTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seniorhighTests.release.xcconfig"; path = "Target Support Files/Pods-seniorhighTests/Pods-seniorhighTests.release.xcconfig"; sourceTree = "<group>"; };
 		59F55FEAF697D9ABEA539020 /* Pods-seniorhighTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seniorhighTests.debug.xcconfig"; path = "Target Support Files/Pods-seniorhighTests/Pods-seniorhighTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6D1DF8A26CEE5D3D31935020 /* Pods_seniorhigh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seniorhigh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +90,7 @@
 		89C8DDE41E827A486D2D0B74 /* Pods-seniorhigh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seniorhigh.release.xcconfig"; path = "Target Support Files/Pods-seniorhigh/Pods-seniorhigh.release.xcconfig"; sourceTree = "<group>"; };
 		8D9A7E6503C709CCEDA465B4 /* Pods_seniorhighTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seniorhighTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B00C18772971BD9800884F0B /* UIUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtils.swift; sourceTree = "<group>"; };
+		B01961482F61A9770090D28F /* grade_2026_0311.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = grade_2026_0311.db; sourceTree = "<group>"; };
 		B04B7B88230A706000553B83 /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		B04B7B8A230A777500553B83 /* DialogPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogPresentationController.swift; sourceTree = "<group>"; };
 		B04B7B8C230AD0BB00553B83 /* BasicSearchPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicSearchPageController.swift; sourceTree = "<group>"; };
@@ -277,6 +283,7 @@
 				B0D3A6CB22E2192000D218E2 /* Main.storyboard */,
 				B0F963D02300C44700C77C66 /* MainPageController.swift */,
 				B0F963BF22FE7B1100C77C66 /* Config.swift */,
+				B01961482F61A9770090D28F /* grade_2026_0311.db */,
 				B0CB28382E20E663004D796D /* grade_2025_0706.db */,
 				B0D3A6CE22E2192100D218E2 /* Assets.xcassets */,
 				B0D3A6D022E2192100D218E2 /* LaunchScreen.storyboard */,
@@ -330,10 +337,12 @@
 			children = (
 				B0F963C7230039F800C77C66 /* TextUtils.swift */,
 				B0F963B322FD583A00C77C66 /* GradeTableViewCell.swift */,
+				0DE455A5AB9AE9D28F17E5B3 /* SchoolListTableViewCell.swift */,
 				B04B7B88230A706000553B83 /* SearchTextField.swift */,
 				B04B7B8A230A777500553B83 /* DialogPresentationController.swift */,
 				B04B7B92230B012F00553B83 /* AdManager.swift */,
 				B081B383231FABED009267ED /* AlertDialog.swift */,
+				13AE343FDA9DF365E23D3A5A /* Theme.swift */,
 				B00C18772971BD9800884F0B /* UIUtils.swift */,
 			);
 			path = utils;
@@ -465,6 +474,7 @@
 				B0D3A6CF22E2192100D218E2 /* Assets.xcassets in Resources */,
 				B0D3A6CD22E2192000D218E2 /* Main.storyboard in Resources */,
 				B0B865D622F4B68F00E90F98 /* UnifyPage.storyboard in Resources */,
+				B01961492F61A9770090D28F /* grade_2026_0311.db in Resources */,
 				B0CB28392E20E663004D796D /* grade_2025_0706.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -606,6 +616,7 @@
 				B0F963DF2307CC2200C77C66 /* UnifyDialog.swift in Sources */,
 				B0F963CA23003B8600C77C66 /* DownloadService.swift in Sources */,
 				B0F963B422FD583A00C77C66 /* GradeTableViewCell.swift in Sources */,
+				DE10DCE8FA42E442446440E5 /* SchoolListTableViewCell.swift in Sources */,
 				B0F963C522FFEAAA00C77C66 /* VersionService.swift in Sources */,
 				B081B380231F8132009267ED /* Favorite.swift in Sources */,
 				B04B7B93230B012F00553B83 /* AdManager.swift in Sources */,
@@ -617,6 +628,7 @@
 				B0F963D92305B17200C77C66 /* BasicDialog.swift in Sources */,
 				B04D8B20231650D1004FC673 /* UserDatabase.swift in Sources */,
 				B00C18782971BD9800884F0B /* UIUtils.swift in Sources */,
+				5D4C52CF2A99983D3F8AF6A6 /* Theme.swift in Sources */,
 				B0CB283C2E21049A004D796D /* DBUtils.swift in Sources */,
 				B04B7B8D230AD0BB00553B83 /* BasicSearchPageController.swift in Sources */,
 				B0F963DB2307C9E000C77C66 /* UnifyPageController.swift in Sources */,
@@ -816,7 +828,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = PY7NKJMQL8;
 				INFOPLIST_FILE = seniorhigh/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
@@ -824,7 +836,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.7;
+				MARKETING_VERSION = 1.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.feveral.seniorhigh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -838,7 +850,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = PY7NKJMQL8;
 				INFOPLIST_FILE = seniorhigh/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
@@ -846,7 +858,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.7;
+				MARKETING_VERSION = 1.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.feveral.seniorhigh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

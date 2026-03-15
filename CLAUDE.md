@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a native iOS application called "升大學歷屆成績" (Senior High School Grade History) that helps high school students in Taiwan search for university admission scores. The app provides historical admission data for three types of entrance examinations: 學測 (Basic Test), 指考 (Designated Test), and 統測 (Unified Test).
+This is a native iOS application called "升大學歷屆成績" (Senior High School Grade History) that helps high school students in Taiwan search for university admission scores. The app provides historical admission data for three types of entrance examinations: 學測 (Basic Test), 分科 (Designated Test), and 統測 (Unified Test).
 
 ## Development Commands
 
@@ -31,7 +31,7 @@ seniorhigh/
 ├── database/       # Database connection and user data
 ├── services/       # API requests and download services
 ├── basic/          # Basic Test (學測) UI and logic
-├── designated/     # Designated Test (指考) UI and logic
+├── designated/     # Designated Test (分科) UI and logic
 ├── unify/          # Unified Test (統測) UI and logic
 ├── favorite/       # Favorite records functionality
 └── utils/          # Utility classes and UI helpers
@@ -39,7 +39,7 @@ seniorhigh/
 
 ### Core Data Models
 - `BasicGrade`: Model for Basic Test (學測) grades with subject-specific scores
-- `DesignatedGrade`: Model for Designated Test (指考) grades with subject weights
+- `DesignatedGrade`: Model for Designated Test (分科) grades with subject weights
 - `UnifyGrade`: Model for Unified Test (統測) grades with department groups
 - `Favorite`: Model for user's favorite grade records
 

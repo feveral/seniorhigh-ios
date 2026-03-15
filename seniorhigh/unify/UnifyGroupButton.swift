@@ -12,47 +12,24 @@ import UIKit
 class UnifyGroupButton {
     
     var currentIndex: Int  = 0
-    var switchToAllSchoolButton: UIButton
-    var switchToGroupButtons: [UIButton]
-    var allSchoolButtonLayer: CALayer!
-    var groupButtonLayer: [CALayer] = []
+    private var buttons: [UIButton]
+    private let maxIndex: Int
     
     init(switchToAllSchoolButton: UIButton, switchToGroupButtons: [UIButton]) {
-        self.switchToAllSchoolButton = switchToAllSchoolButton
-        self.switchToGroupButtons = switchToGroupButtons
-        
-        self.allSchoolButtonLayer = CALayer()
-        self.initialUnderlineLayer(button: switchToAllSchoolButton, layer: allSchoolButtonLayer)
-        for i in 1...20 {
-            groupButtonLayer.append(CALayer())
-            self.initialUnderlineLayer(button: switchToGroupButtons[i-1], layer: groupButtonLayer[i-1])
-        }
+        self.buttons = [switchToAllSchoolButton] + switchToGroupButtons
+        self.maxIndex = self.buttons.count - 1
+        self.buttons.forEach { Theme.styleFilterChip($0, isSelected: false) }
         self.switchToAllSchool()
-    }
-    
-    func initialUnderlineLayer(button: UIButton, layer: CALayer) {
-        layer.frame = CGRect(x: 0, y: button.frame.height, width: button.frame.width, height: 2)
-        layer.backgroundColor = #colorLiteral(red: 1, green: 0.6235294118, blue: 0.03921568627, alpha: 1)
-    }
-    
-    func setAllBaseStyle() {
-        self.allSchoolButtonLayer.removeFromSuperlayer()
-        for i in 1...20 {
-            groupButtonLayer[i-1].removeFromSuperlayer()
-        }
     }
     
     func switchToAllSchool() {
         self.currentIndex = 0
-        self.setAllBaseStyle()
-        self.switchToAllSchoolButton.layer.addSublayer(allSchoolButtonLayer)
+        updateAppearance()
     }
     
     func switchToGroup(groupNumber: Int) {
         self.currentIndex = groupNumber
-        let index = groupNumber - 1
-        self.setAllBaseStyle()
-        self.switchToGroupButtons[index].layer.addSublayer(groupButtonLayer[index])
+        updateAppearance()
     }
     
     func switchToRight() -> Bool {
@@ -60,24 +37,22 @@ class UnifyGroupButton {
             return false
         }
         currentIndex -= 1
-        if (currentIndex == 0) {
-            switchToAllSchool()
-        } else {
-            switchToGroup(groupNumber: currentIndex)
-        }
+        updateAppearance()
         return true
     }
     
     func switchToLeft() -> Bool {
-        if (currentIndex == 20) {
+        if (currentIndex == maxIndex) {
             return false
         }
         currentIndex += 1
-        if (currentIndex == 0) {
-            switchToAllSchool()
-        } else {
-            switchToGroup(groupNumber: currentIndex)
-        }
+        updateAppearance()
         return true
+    }
+
+    private func updateAppearance() {
+        for (index, button) in buttons.enumerated() {
+            Theme.styleFilterChip(button, isSelected: currentIndex == index)
+        }
     }
 }

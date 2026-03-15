@@ -63,23 +63,26 @@ class UnifyPageController: UIViewController, UITableViewDataSource, UITableViewD
                           options: .transitionCrossDissolve,
                           animations: { self.tableView.reloadData() })
         setBackButtonVisibility()
-        tableView.backgroundColor = UIColor.white
     }
     
     private func setBackButtonVisibility() {
         if (tableStatus.getGroupStatus() == .schoolDepartment
             && tableStatus.getSchoolDepartmentStatus() == .department) {
             backButton.isEnabled = true
-            backButton.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            backButton.tintColor = Theme.accent
         } else {
             backButton.isEnabled = false
-            backButton.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
+            backButton.tintColor = Theme.accent.withAlphaComponent(0.2)
         }
     }
-    
+
     override func viewDidLoad() {
-        let groupButtons = [switchToGroup1Button, switchToGroup2Button, switchToGroup3Button, switchToGroup4Button, switchToGroup5Button, switchToGroup6Button, switchToGroup7Button, switchToGroup8Button, switchToGroup9Button, switchToGroup10Button, switchToGroup11Button, switchToGroup12Button, switchToGroup13Button, switchToGroup14Button, switchToGroup15Button, switchToGroup16Button, switchToGroup17Button, switchToGroup18Button, switchToGroup19Button, switchToGroup20Button]
-        unifyGroupButton = UnifyGroupButton(switchToAllSchoolButton: switchToAllSchoolButton, switchToGroupButtons: groupButtons as! [UIButton])
+        super.viewDidLoad()
+        Theme.addGradientBackground(to: view)
+        Theme.styleTableView(tableView)
+        switchButtonScrollView.backgroundColor = .clear
+        let groupButtons = [switchToGroup1Button, switchToGroup2Button, switchToGroup3Button, switchToGroup4Button, switchToGroup5Button, switchToGroup6Button, switchToGroup7Button, switchToGroup8Button, switchToGroup9Button, switchToGroup10Button, switchToGroup11Button, switchToGroup12Button, switchToGroup13Button, switchToGroup14Button, switchToGroup15Button, switchToGroup16Button, switchToGroup17Button, switchToGroup18Button, switchToGroup19Button, switchToGroup20Button].compactMap { $0 }
+        unifyGroupButton = UnifyGroupButton(switchToAllSchoolButton: switchToAllSchoolButton, switchToGroupButtons: groupButtons)
         initialAd()
         setBackButtonVisibility()
     }

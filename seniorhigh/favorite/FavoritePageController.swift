@@ -60,17 +60,24 @@ class FavoritePageController: UIViewController,UITableViewDataSource, UITableVie
             reloadTable()
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        typingPrompt = UILabel(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+        Theme.addGradientBackground(to: view)
+        Theme.styleTableView(tableView)
+        Theme.styleSegmentedControl(segmentControl)
+        typingPrompt = UILabel()
         typingPrompt.textAlignment = .center
-        typingPrompt.font = typingPrompt.font.withSize(23)
         typingPrompt.text = "目前沒有任何校系加入收藏"
-        typingPrompt.textColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+        Theme.styleEmptyStateLabel(typingPrompt)
+        typingPrompt.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(typingPrompt)
+        NSLayoutConstraint.activate([
+            typingPrompt.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
+            typingPrompt.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32),
+            typingPrompt.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
         setVisibility()
-        tableView.backgroundColor = UIColor.white
     }
     
     func setVisibility() {

@@ -18,27 +18,27 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IeA-dy-aoE">
                                 <rect key="frame" x="0.0" y="9" width="414" height="580"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="basicCell" textLabel="PET-4B-Rkf" rowHeight="70" style="IBUITableViewCellStyleDefault" id="fLG-2q-Mui">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="basicCell" textLabel="PET-4B-Rkf" rowHeight="70" style="IBUITableViewCellStyleDefault" id="fLG-2q-Mui" customClass="SchoolListTableViewCell" customModule="seniorhigh" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fLG-2q-Mui" id="x5H-aF-QoE">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PET-4B-Rkf">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PET-4B-Rkf">
                                                     <rect key="frame" x="20" y="0.0" width="374" height="70"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" systemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -48,7 +48,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Zjs-Le-4aj"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="IeA-dy-aoE" firstAttribute="leading" secondItem="Zjs-Le-4aj" secondAttribute="leading" id="4U5-0P-eTp"/>
                             <constraint firstItem="Zjs-Le-4aj" firstAttribute="bottom" secondItem="IeA-dy-aoE" secondAttribute="bottom" constant="50" id="9P3-ME-g6m"/>
@@ -120,7 +120,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G5f-v7-59f">
                                 <rect key="frame" x="0.0" y="8" width="414" height="581"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="gradeCell" rowHeight="70" id="0LJ-xE-HpS" customClass="GradeTableViewCell" customModule="seniorhigh" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="414" height="70"/>
@@ -156,7 +156,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="cWS-FV-uWj" firstAttribute="top" secondItem="woS-Yd-OiC" secondAttribute="topMargin" constant="13" id="CUv-iu-Hg7"/>
                                                 <constraint firstItem="MCZ-HQ-Q3h" firstAttribute="leading" secondItem="woS-Yd-OiC" secondAttribute="leading" constant="20" id="W37-de-BuE"/>
@@ -164,7 +164,7 @@
                                                 <constraint firstItem="cWS-FV-uWj" firstAttribute="trailing" secondItem="woS-Yd-OiC" secondAttribute="trailingMargin" id="xZn-lM-Tjy"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="departmentLabel" destination="fqk-bj-gqI" id="xnh-54-Gzx"/>
                                             <outlet property="gradeLabel" destination="cWS-FV-uWj" id="1ZC-gX-Gzn"/>
@@ -179,7 +179,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yiy-ms-YpL"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="G5f-v7-59f" firstAttribute="leading" secondItem="yiy-ms-YpL" secondAttribute="leading" id="DmP-2W-SNk"/>

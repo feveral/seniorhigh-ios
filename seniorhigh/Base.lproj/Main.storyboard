@@ -35,7 +35,7 @@
         <scene sceneID="XJH-no-o61">
             <objects>
                 <viewControllerPlaceholder storyboardIdentifier="DesignatedPage" storyboardName="DesignatedPage" referencedIdentifier="DesignatedPage" id="qJa-Qs-unq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="指考" id="wCc-K6-4Ci"/>
+                    <tabBarItem key="tabBarItem" title="分科" id="wCc-K6-4Ci"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZDC-mA-uAe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

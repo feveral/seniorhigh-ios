@@ -34,12 +34,16 @@ class DesignatedPageController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var switchToFirstGroupButton: UIButton!
     @IBOutlet weak var switchToSecondGroupButton: UIButton!
     @IBOutlet weak var switchToThirdGroupButton: UIButton!
+    @IBOutlet weak var groupButtonStackView: UIStackView!
     
     @IBOutlet weak var tableView: UITableView!
     var designatedGroupButton: DesignatedGroupButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Theme.addGradientBackground(to: view)
+        Theme.styleTableView(tableView)
+        configureGroupStackLayout()
         designatedGroupButton = DesignatedGroupButton(
             switchToAllSchoolButton: self.switchToAllSchoolButton,
             switchToFirstGroupButton: self.switchToFirstGroupButton,
@@ -47,7 +51,6 @@ class DesignatedPageController: UIViewController, UITableViewDataSource, UITable
             switchToThirdGroupButton: self.switchToThirdGroupButton)
         initialAd()
         setBackButtonVisibility()
-        tableView.backgroundColor = UIColor.white
     }
     
     func initialAd() {
@@ -69,11 +72,17 @@ class DesignatedPageController: UIViewController, UITableViewDataSource, UITable
         if (tableStatus.getGroupStatus() == .schoolDepartment
             && tableStatus.getSchoolDepartmentStatus() == .department ) {
             backButton.isEnabled = true
-            backButton.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            backButton.tintColor = Theme.accent
         } else {
             backButton.isEnabled = false
-            backButton.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
+            backButton.tintColor = Theme.accent.withAlphaComponent(0.2)
         }
+    }
+
+    private func configureGroupStackLayout() {
+        groupButtonStackView.isLayoutMarginsRelativeArrangement = true
+        groupButtonStackView.layoutMargins = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
+        groupButtonStackView.spacing = 12
     }
     
     //MARK: Actions

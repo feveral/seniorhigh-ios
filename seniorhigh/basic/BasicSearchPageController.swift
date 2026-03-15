@@ -55,19 +55,38 @@ class BasicSearchPageController: UIViewController,UITableViewDataSource, UITable
     }
     
     func initialUI() {
+        Theme.addGradientBackground(to: view)
         searchTextField.setPlaceholder("搜尋學測成績")
-        self.navigationItem.titleView = searchTextField
+        let titleContainer = UIView()
+        titleContainer.translatesAutoresizingMaskIntoConstraints = false
+        titleContainer.addSubview(searchTextField)
+        NSLayoutConstraint.activate([
+            searchTextField.leadingAnchor.constraint(equalTo: titleContainer.leadingAnchor),
+            searchTextField.trailingAnchor.constraint(equalTo: titleContainer.trailingAnchor),
+            searchTextField.topAnchor.constraint(equalTo: titleContainer.topAnchor),
+            searchTextField.bottomAnchor.constraint(equalTo: titleContainer.bottomAnchor),
+            searchTextField.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width * 0.9)
+        ])
+        self.navigationItem.titleView = titleContainer
         searchTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
         searchTextField.delegate = self
-        typingPrompt = UILabel(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+        typingPrompt = UILabel()
         typingPrompt.textAlignment = .center
-        typingPrompt.font = typingPrompt.font.withSize(23)
+        typingPrompt.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         typingPrompt.text = "輸入關鍵字以搜尋校系"
-        typingPrompt.textColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+        typingPrompt.textColor = Theme.mutedText
+        typingPrompt.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(typingPrompt)
+        NSLayoutConstraint.activate([
+            typingPrompt.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            typingPrompt.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            typingPrompt.leadingAnchor.constraint(greaterThanOrEqualTo: view.leadingAnchor, constant: 24),
+            typingPrompt.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor, constant: -24)
+        ])
         setVisibility()
         hideKeyboardWhenTappedAround()
-        tableView.backgroundColor = UIColor.white
+        Theme.styleTableView(tableView)
+        tableView.backgroundColor = .clear
         tableView.keyboardDismissMode = .onDrag
     }
     

@@ -20,9 +20,11 @@ class BasicPageController: UIViewController, UITableViewDataSource, UITableViewD
     //MARK: Actions
 
     override func viewDidLoad() {
+        super.viewDidLoad()
+        Theme.addGradientBackground(to: view)
+        Theme.styleTableView(tableView)
         initialAd()
         setBackButtonVisibility()
-        tableView.backgroundColor = UIColor.white
     }
     
     @IBAction func backPressed(_ sender: Any) {
@@ -54,10 +56,10 @@ class BasicPageController: UIViewController, UITableViewDataSource, UITableViewD
     private func setBackButtonVisibility() {
         if (tableStatus.getSchoolDepartmentStatus() == .department) {
             backButton.isEnabled = true
-            backButton.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            backButton.tintColor = Theme.accent
         } else {
             backButton.isEnabled = false
-            backButton.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
+            backButton.tintColor = Theme.accent.withAlphaComponent(0.2)
         }
     }
     

@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--指考分數-->
+        <!--分科分數-->
         <scene sceneID="hpy-Ip-dQK">
             <objects>
                 <viewController id="Re3-ea-TD9" customClass="DesignatedPageController" customModule="seniorhigh" customModuleProvider="target" sceneMemberID="viewController">
@@ -60,18 +60,18 @@
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CL1-KD-pot">
                                 <rect key="frame" x="0.0" y="41" width="414" height="548"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="basicCell" textLabel="imT-9a-Cx6" rowHeight="70" style="IBUITableViewCellStyleDefault" id="suJ-gC-bvb">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="basicCell" textLabel="imT-9a-Cx6" rowHeight="70" style="IBUITableViewCellStyleDefault" id="suJ-gC-bvb" customClass="SchoolListTableViewCell" customModule="seniorhigh" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="suJ-gC-bvb" id="xaW-UK-NNA">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="imT-9a-Cx6">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="imT-9a-Cx6">
                                                     <rect key="frame" x="20" y="0.0" width="374" height="70"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -79,7 +79,7 @@
                                                     <color key="highlightedColor" systemColor="darkTextColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="gradeCell" rowHeight="70" id="au6-7V-Des" customClass="GradeTableViewCell" customModule="seniorhigh" customModuleProvider="target">
@@ -116,7 +116,7 @@
                                                     <color key="highlightedColor" systemColor="systemOrangeColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="FEz-Fj-RMT" firstAttribute="leading" secondItem="Lw2-Ev-MyX" secondAttribute="leading" constant="20" id="3gz-pQ-Bjw"/>
                                                 <constraint firstItem="LjU-0e-YRA" firstAttribute="top" secondItem="Lw2-Ev-MyX" secondAttribute="topMargin" constant="13" id="59g-z3-i4N"/>
@@ -154,7 +154,7 @@
                             <outletCollection property="gestureRecognizers" destination="mQO-eV-Csk" appends="YES" id="CQt-Z5-wvf"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="指考分數" id="bXZ-Dt-CiQ">
+                    <navigationItem key="navigationItem" title="分科分數" id="bXZ-Dt-CiQ">
                         <barButtonItem key="leftBarButtonItem" title="返回" image="ic_back" id="zLE-xB-pCG">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -168,11 +168,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="backButton" destination="zLE-xB-pCG" id="oKE-KS-1kD"/>
-                        <outlet property="switchToAllSchoolButton" destination="MUN-Fg-fUt" id="sKO-ey-Hmr"/>
-                        <outlet property="switchToFirstGroupButton" destination="OE1-a9-GK2" id="GeA-8T-Ynq"/>
-                        <outlet property="switchToSecondGroupButton" destination="YSn-bK-CV0" id="khD-Uw-Dz6"/>
+                        <connections>
+                            <outlet property="backButton" destination="zLE-xB-pCG" id="oKE-KS-1kD"/>
+                            <outlet property="groupButtonStackView" destination="ody-uz-jMc" id="f1o-sw-UKf"/>
+                            <outlet property="switchToAllSchoolButton" destination="MUN-Fg-fUt" id="sKO-ey-Hmr"/>
+                            <outlet property="switchToFirstGroupButton" destination="OE1-a9-GK2" id="GeA-8T-Ynq"/>
+                            <outlet property="switchToSecondGroupButton" destination="YSn-bK-CV0" id="khD-Uw-Dz6"/>
                         <outlet property="switchToThirdGroupButton" destination="22w-DG-p4m" id="gT7-wJ-zEg"/>
                         <outlet property="tableView" destination="CL1-KD-pot" id="iso-zK-v4c"/>
                     </connections>
@@ -201,7 +202,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OOW-YB-gSa">
                                 <rect key="frame" x="0.0" y="8" width="414" height="623"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="gradeCell" rowHeight="70" id="bVA-SD-DpU" customClass="GradeTableViewCell" customModule="seniorhigh" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="414" height="70"/>
@@ -237,7 +238,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="kzi-SZ-I3T" firstAttribute="top" secondItem="bHi-7H-4s0" secondAttribute="topMargin" constant="4" id="Ouy-v6-kk1"/>
                                                 <constraint firstItem="21e-at-xjx" firstAttribute="top" secondItem="bHi-7H-4s0" secondAttribute="topMargin" constant="13" id="awg-8U-Dxa"/>
@@ -245,7 +246,7 @@
                                                 <constraint firstItem="21e-at-xjx" firstAttribute="trailing" secondItem="bHi-7H-4s0" secondAttribute="trailingMargin" id="thR-jX-6Oo"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="departmentLabel" destination="k2d-2g-tfR" id="Ss0-xa-PSD"/>
                                             <outlet property="gradeLabel" destination="21e-at-xjx" id="5ZT-Bq-CLk"/>
@@ -260,7 +261,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wQ4-Sa-fYa"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="OOW-YB-gSa" firstAttribute="top" secondItem="wQ4-Sa-fYa" secondAttribute="top" constant="8" id="61k-JD-lhA"/>
                             <constraint firstItem="wQ4-Sa-fYa" firstAttribute="trailing" secondItem="OOW-YB-gSa" secondAttribute="trailing" id="JsR-6b-aur"/>
@@ -276,11 +277,11 @@
             </objects>
             <point key="canvasLocation" x="3095.6521739130435" y="-666.29464285714278"/>
         </scene>
-        <!--指考-->
+        <!--分科-->
         <scene sceneID="kE1-s1-ZBa">
             <objects>
                 <navigationController storyboardIdentifier="DesignatedPage" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rNd-jV-eyu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="指考" image="ic_designated" id="yHj-IY-inx">
+                    <tabBarItem key="tabBarItem" title="分科" image="ic_designated" id="yHj-IY-inx">
                         <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <toolbarItems/>

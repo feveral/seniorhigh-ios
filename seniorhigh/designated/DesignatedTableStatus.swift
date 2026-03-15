@@ -90,8 +90,8 @@ class DesignatedTableStatus {
     
     public func buildCell(_ tableView: UITableView, _ indexPath: IndexPath) -> UITableViewCell {
         if (groupStatus == .schoolDepartment) {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "basicCell", for: indexPath)
-            cell.textLabel?.text = schoolOrDepartmentList[indexPath.row]
+            let cell = tableView.dequeueReusableCell(withIdentifier: "basicCell", for: indexPath) as! SchoolListTableViewCell
+            cell.configure(title: schoolOrDepartmentList[indexPath.row])
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "gradeCell", for: indexPath) as! GradeTableViewCell

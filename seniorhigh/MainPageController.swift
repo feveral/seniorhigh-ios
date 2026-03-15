@@ -13,9 +13,26 @@ import AdSupport
 class MainPageController: UITabBarController {
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         MobileAds.shared.requestConfiguration.testDeviceIdentifiers = Config.Application.adTestDevices;
-        view.backgroundColor = .black
-        setStatusBarBackgroundColor(.black)
+        view.backgroundColor = .clear
+        Theme.addGradientBackground(to: view)
+        configureTabBar()
+        setStatusBarBackgroundColor(Theme.backgroundTop)
+    }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
+    private func configureTabBar() {
+        tabBar.layer.cornerRadius = 24
+        tabBar.layer.masksToBounds = false
+        tabBar.layer.shadowColor = Theme.shadowColor
+        tabBar.layer.shadowOpacity = 0.4
+        tabBar.layer.shadowOffset = CGSize(width: 0, height: -4)
+        tabBar.layer.shadowRadius = 18
+        tabBar.itemPositioning = .automatic
     }
 
     func setStatusBarBackgroundColor(_ color: UIColor) {

@@ -52,8 +52,8 @@ class BasicTableStatus {
     }
     
     public func buildCell(_ tableView: UITableView, _ indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "basicCell", for: indexPath)
-        cell.textLabel?.text = schoolOrDepartmentList[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "basicCell", for: indexPath) as! SchoolListTableViewCell
+        cell.configure(title: schoolOrDepartmentList[indexPath.row])
         return cell
     }
 }
