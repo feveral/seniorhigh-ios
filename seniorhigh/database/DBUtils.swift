@@ -15,4 +15,12 @@ class DBUtils {
             return 0.0
         }
     }
+    
+    static func toFuzzyLikePattern(_ keyword: String) -> String {
+        var pattern = "%"
+        for character in keyword where !character.isWhitespace {
+            pattern += "\(character)%"
+        }
+        return pattern
+    }
 }

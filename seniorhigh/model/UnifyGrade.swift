@@ -114,12 +114,8 @@ class UnifyGrade {
             }
             var grades: [UnifyGrade] = []
             let db: Connection = GradeDatabase.getDatabaseConnection()!
-            var keyWordPattern = "%";
-            for i in 0...keyWord.count-1 {
-                let startIndex = keyWord.startIndex
-                keyWordPattern += (String(keyWord[keyWord.index(startIndex, offsetBy: i)]) + "%");
-            }
-            let sql = "SELECT * from Unify where year='\(year)' AND (school LIKE '\(keyWordPattern)' OR department LIKE '\(keyWordPattern)');"
+            let keyWordPattern = DBUtils.toFuzzyLikePattern(keyWord)
+            let sql = "SELECT * from Unify where year='\(year)' AND (school LIKE '\(keyWordPattern)' OR department LIKE '\(keyWordPattern)' OR (school || department) LIKE '\(keyWordPattern)');"
             for row in try db.prepare(sql) {
                 grades.append(UnifyGrade.dbRowToUnifyGrade(row: row))
             }

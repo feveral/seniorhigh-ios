@@ -124,12 +124,8 @@ class DesignatedGrade {
             }
             var grades: [DesignatedGrade] = []
             let db: Connection = GradeDatabase.getDatabaseConnection()!
-            var keyWordPattern = "%";
-            for i in 0...keyWord.count-1 {
-                let startIndex = keyWord.startIndex
-                keyWordPattern += (String(keyWord[keyWord.index(startIndex, offsetBy: i)]) + "%");
-            }
-            var sql = "SELECT * from Designated where year='\(year)' AND (school LIKE '\(keyWordPattern)' OR department LIKE '\(keyWordPattern)')"
+            let keyWordPattern = DBUtils.toFuzzyLikePattern(keyWord)
+            var sql = "SELECT * from Designated where year='\(year)' AND (school LIKE '\(keyWordPattern)' OR department LIKE '\(keyWordPattern)' OR (school || department) LIKE '\(keyWordPattern)')"
             if !includeSkill {
                 sql += " AND (skill IS NULL OR skill=0)"
             }

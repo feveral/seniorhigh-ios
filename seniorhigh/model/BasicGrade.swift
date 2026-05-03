@@ -239,12 +239,8 @@ class BasicGrade {
             }
             var grades: [BasicGrade] = []
             let db: Connection = GradeDatabase.getDatabaseConnection()!
-            var keyWordPattern = "%";
-            for i in 0...keyWord.count-1 {
-                let startIndex = keyWord.startIndex
-                keyWordPattern += (String(keyWord[keyWord.index(startIndex, offsetBy: i)]) + "%");
-            }
-            let sql = "SELECT * from Basic where year='\(year)' AND (school LIKE '\(keyWordPattern)' OR department LIKE '\(keyWordPattern)');"
+            let keyWordPattern = DBUtils.toFuzzyLikePattern(keyWord)
+            let sql = "SELECT * from Basic where year='\(year)' AND (school LIKE '\(keyWordPattern)' OR department LIKE '\(keyWordPattern)' OR (school || department) LIKE '\(keyWordPattern)');"
             for row in try db.prepare(sql) {
                 grades.append(BasicGrade.dbRowToBasicGrade(row: row))
             }
@@ -287,4 +283,3 @@ class BasicSubjectGrade {
         return 0
     }
 }
-
