@@ -56,7 +56,7 @@ class BasicDialog: AlertDialog {
     
     public func setSecondYearGrade(grade: BasicGrade) {
         self._secondYearGrade = grade
-        if (!grade.isEmpty && false) { // Hide second year UI, keep code for future use
+        if (!grade.isEmpty) {
             addYearLabel(grade: grade)
             addGradeLabel(grade: grade)
         }

@@ -38,8 +38,10 @@ class GradeTableViewCell: UITableViewCell {
         departmentLabel.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         departmentLabel.textColor = Theme.mutedText
         departmentLabel.numberOfLines = 2
-        gradeLabel.font = UIFont.monospacedDigitSystemFont(ofSize: 20, weight: .bold)
+        gradeLabel.font = UIFont.monospacedDigitSystemFont(ofSize: 17, weight: .bold)
         gradeLabel.textColor = Theme.accent
+        gradeLabel.numberOfLines = 2
+        gradeLabel.textAlignment = .right
         gradeLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
     }
 
@@ -54,8 +56,15 @@ class GradeTableViewCell: UITableViewCell {
             guard let label = label else { return }
             detachFromStoryboard(label)
             label.translatesAutoresizingMaskIntoConstraints = false
-            cardView.addSubview(label)
         }
+
+        let leftStack = UIStackView(arrangedSubviews: [schoolLabel, departmentLabel])
+        leftStack.axis = .vertical
+        leftStack.spacing = 4
+        leftStack.translatesAutoresizingMaskIntoConstraints = false
+        cardView.addSubview(leftStack)
+        cardView.addSubview(gradeLabel)
+
         NSLayoutConstraint.activate([
             cardView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: inset.left),
             cardView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset.right),
@@ -63,14 +72,11 @@ class GradeTableViewCell: UITableViewCell {
             cardView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -inset.bottom),
             cardView.heightAnchor.constraint(greaterThanOrEqualToConstant: minimumContentHeight),
 
-            schoolLabel.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 16),
-            schoolLabel.trailingAnchor.constraint(equalTo: gradeLabel.leadingAnchor, constant: -6),
-            schoolLabel.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 12),
-
-            departmentLabel.leadingAnchor.constraint(equalTo: schoolLabel.leadingAnchor),
-            departmentLabel.trailingAnchor.constraint(equalTo: schoolLabel.trailingAnchor),
-            departmentLabel.topAnchor.constraint(equalTo: schoolLabel.bottomAnchor, constant: 4),
-            departmentLabel.bottomAnchor.constraint(lessThanOrEqualTo: cardView.bottomAnchor, constant: -12),
+            leftStack.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 16),
+            leftStack.trailingAnchor.constraint(equalTo: gradeLabel.leadingAnchor, constant: -6),
+            leftStack.centerYAnchor.constraint(equalTo: cardView.centerYAnchor),
+            leftStack.topAnchor.constraint(greaterThanOrEqualTo: cardView.topAnchor, constant: 12),
+            leftStack.bottomAnchor.constraint(lessThanOrEqualTo: cardView.bottomAnchor, constant: -12),
 
             gradeLabel.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -gradeLabelRightPadding),
             gradeLabel.centerYAnchor.constraint(equalTo: cardView.centerYAnchor),
@@ -92,6 +98,11 @@ class GradeTableViewCell: UITableViewCell {
         }
 
         view.removeFromSuperview()
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        departmentLabel.isHidden = false
     }
 
     override func layoutSubviews() {

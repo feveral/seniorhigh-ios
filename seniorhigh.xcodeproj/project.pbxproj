@@ -26,6 +26,7 @@
 		B09C35152FA701060000680C /* grade_2026_0503.db in Resources */ = {isa = PBXBuildFile; fileRef = B09C35142FA701060000680C /* grade_2026_0503.db */; };
 		B0B865C722F271DC00E90F98 /* BasicPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B865C622F271DC00E90F98 /* BasicPageController.swift */; };
 		B0B865CA22F3282800E90F98 /* DesignatedGroupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B865C922F3282800E90F98 /* DesignatedGroupButton.swift */; };
+		B0B865CB22F3282800E90F98 /* BasicGroupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B865CC22F3282800E90F98 /* BasicGroupButton.swift */; };
 		B0B865D022F4B4AE00E90F98 /* DesignatedPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0B865CF22F4B4AE00E90F98 /* DesignatedPage.storyboard */; };
 		B0B865D422F4B67B00E90F98 /* BasicPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0B865D322F4B67B00E90F98 /* BasicPage.storyboard */; };
 		B0B865D622F4B68F00E90F98 /* UnifyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0B865D522F4B68F00E90F98 /* UnifyPage.storyboard */; };
@@ -103,6 +104,7 @@
 		B09C35142FA701060000680C /* grade_2026_0503.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = grade_2026_0503.db; sourceTree = "<group>"; };
 		B0B865C622F271DC00E90F98 /* BasicPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicPageController.swift; sourceTree = "<group>"; };
 		B0B865C922F3282800E90F98 /* DesignatedGroupButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignatedGroupButton.swift; sourceTree = "<group>"; };
+		B0B865CC22F3282800E90F98 /* BasicGroupButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicGroupButton.swift; sourceTree = "<group>"; };
 		B0B865CF22F4B4AE00E90F98 /* DesignatedPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DesignatedPage.storyboard; sourceTree = "<group>"; };
 		B0B865D322F4B67B00E90F98 /* BasicPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BasicPage.storyboard; sourceTree = "<group>"; };
 		B0B865D522F4B68F00E90F98 /* UnifyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UnifyPage.storyboard; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 			children = (
 				B0B865D322F4B67B00E90F98 /* BasicPage.storyboard */,
 				B0B865C622F271DC00E90F98 /* BasicPageController.swift */,
+				B0B865CC22F3282800E90F98 /* BasicGroupButton.swift */,
 				B0F963D62305AF3E00C77C66 /* BasicTableStatus.swift */,
 				B0F963D82305B17200C77C66 /* BasicDialog.swift */,
 				B04B7B8C230AD0BB00553B83 /* BasicSearchPageController.swift */,
@@ -643,6 +646,7 @@
 				B0F963C8230039F800C77C66 /* TextUtils.swift in Sources */,
 				B0F963D72305AF3E00C77C66 /* BasicTableStatus.swift in Sources */,
 				B0B865CA22F3282800E90F98 /* DesignatedGroupButton.swift in Sources */,
+				B0B865CB22F3282800E90F98 /* BasicGroupButton.swift in Sources */,
 				B04B7B8B230A777500553B83 /* DialogPresentationController.swift in Sources */,
 				B0F963C322FF0F2B00C77C66 /* Versioning.swift in Sources */,
 				B04B7B89230A706000553B83 /* SearchTextField.swift in Sources */,
@@ -824,7 +828,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = PY7NKJMQL8;
 				INFOPLIST_FILE = seniorhigh/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
@@ -832,7 +836,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.9;
+				MARKETING_VERSION = 1.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.feveral.seniorhigh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -846,7 +850,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = PY7NKJMQL8;
 				INFOPLIST_FILE = seniorhigh/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
@@ -854,7 +858,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.9;
+				MARKETING_VERSION = 1.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.feveral.seniorhigh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

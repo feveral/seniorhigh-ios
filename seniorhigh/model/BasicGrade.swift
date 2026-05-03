@@ -109,6 +109,129 @@ class BasicGrade {
         return BasicGrade()
     }
     
+    static func findDepartmentGrades(year: String, school: String) -> [BasicGrade] {
+        do {
+            var grades: [BasicGrade] = []
+            let db: Connection = GradeDatabase.getDatabaseConnection()!
+            let sql = "SELECT * from Basic where year='\(year)' AND school='\(school)'"
+            for row in try db.prepare(sql) {
+                grades.append(BasicGrade.dbRowToBasicGrade(row: row))
+            }
+            return grades
+        } catch {
+            print(error)
+        }
+        return []
+    }
+
+    private static let IS_FIRST_GROUP_DEPT = "(department LIKE '%金融%' OR department LIKE '%經濟%' OR department LIKE '%財務%' OR department LIKE '%會計%')"
+    private static let HAS_MATH_A = "(firstOrder LIKE '%數A%' OR secondOrder LIKE '%數A%' OR thirdOrder LIKE '%數A%' OR fourthOrder LIKE '%數A%' OR fifthOrder LIKE '%數A%' OR sixthOrder LIKE '%數A%')"
+    private static let HAS_MATH_B = "(firstOrder LIKE '%數B%' OR secondOrder LIKE '%數B%' OR thirdOrder LIKE '%數B%' OR fourthOrder LIKE '%數B%' OR fifthOrder LIKE '%數B%' OR sixthOrder LIKE '%數B%')"
+    private static let HAS_SOCIAL = "(firstOrder LIKE '%社%' OR secondOrder LIKE '%社%' OR thirdOrder LIKE '%社%' OR fourthOrder LIKE '%社%' OR fifthOrder LIKE '%社%' OR sixthOrder LIKE '%社%')"
+    private static let HAS_NATURE = "(firstOrder LIKE '%自然%' OR secondOrder LIKE '%自然%' OR thirdOrder LIKE '%自然%' OR fourthOrder LIKE '%自然%' OR fifthOrder LIKE '%自然%' OR sixthOrder LIKE '%自然%')"
+
+    static func findFirstGroup(year: String) -> [BasicGrade] {
+        do {
+            var grades: [BasicGrade] = []
+            let db: Connection = GradeDatabase.getDatabaseConnection()!
+            let sql = "SELECT * from Basic where year='\(year)' AND (\(IS_FIRST_GROUP_DEPT) OR \(HAS_MATH_B) OR (NOT \(HAS_MATH_A) AND \(HAS_SOCIAL)))"
+            for row in try db.prepare(sql) {
+                grades.append(BasicGrade.dbRowToBasicGrade(row: row))
+            }
+            return grades
+        } catch {
+            print(error)
+        }
+        return []
+    }
+
+    static func findSecondGroup(year: String) -> [BasicGrade] {
+        do {
+            var grades: [BasicGrade] = []
+            let db: Connection = GradeDatabase.getDatabaseConnection()!
+            let sql = "SELECT * from Basic where year='\(year)' AND NOT \(IS_FIRST_GROUP_DEPT) AND (\(HAS_MATH_A) OR (NOT \(HAS_MATH_B) AND \(HAS_NATURE)))"
+            for row in try db.prepare(sql) {
+                grades.append(BasicGrade.dbRowToBasicGrade(row: row))
+            }
+            return grades
+        } catch {
+            print(error)
+        }
+        return []
+    }
+
+    static func sortHighToLow(grades: [BasicGrade]) -> [BasicGrade] {
+        return grades.sorted { $0.getAverageLastGrade() > $1.getAverageLastGrade() }
+    }
+
+    // MARK: - Grade display helpers
+
+    private static func isNormalSubject(_ subject: String) -> Bool {
+        return subject.contains("國") || subject.contains("英") || subject.contains("數") ||
+               subject.contains("社") || subject.contains("自")
+    }
+
+    private static func countSubjectsInOrder(_ order: String) -> Int {
+        var count = 0
+        if order.contains("國") { count += 1 }
+        if order.contains("英") { count += 1 }
+        if order.contains("數") { count += 1 }
+        if order.contains("社") { count += 1 }
+        if order.contains("自") { count += 1 }
+        return max(count, 1)
+    }
+
+    func getLastGrade() -> Double {
+        let sg = subjectGrade
+        for i in stride(from: sg.order, through: 1, by: -1) {
+            let subject = sg.getSubject(order: i)
+            let grade = sg.getGrade(order: i)
+            if grade > 0 && BasicGrade.isNormalSubject(subject) {
+                return grade
+            }
+        }
+        return 0
+    }
+
+    func getLastOrder() -> String {
+        let sg = subjectGrade
+        for i in stride(from: sg.order, through: 1, by: -1) {
+            let subject = sg.getSubject(order: i)
+            let grade = sg.getGrade(order: i)
+            if grade > 0 && BasicGrade.isNormalSubject(subject) {
+                return subject
+            }
+        }
+        return ""
+    }
+
+    func getAverageLastGrade() -> Double {
+        let sg = subjectGrade
+        if sg.order == 0 { return 0 }
+        var sum: Double = 0
+        var count = 0
+        for i in 1...sg.order {
+            let subject = sg.getSubject(order: i)
+            let grade = sg.getGrade(order: i)
+            if grade > 0 && BasicGrade.isNormalSubject(subject) {
+                sum += grade / Double(BasicGrade.countSubjectsInOrder(subject))
+                count += 1
+            }
+        }
+        if count == 0 { return 0 }
+        return sum / Double(count)
+    }
+
+    func getLastGradeString() -> String {
+        let lastOrder = getLastOrder().replacingOccurrences(of: "+", with: "")
+        let lastGrade = getLastGrade()
+        let nf = NumberFormatter()
+        nf.maximumFractionDigits = 2
+        nf.minimumFractionDigits = 0
+        let formatted = nf.string(from: NSNumber(value: lastGrade)) ?? "0"
+        return "\(lastOrder)\n\(formatted)"
+    }
+
     static func findByKeyword(year: String, keyWord: String) -> [BasicGrade] {
         do {
             if keyWord.count == 0 {

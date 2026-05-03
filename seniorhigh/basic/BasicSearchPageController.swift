@@ -25,7 +25,7 @@ class BasicSearchPageController: UIViewController,UITableViewDataSource, UITable
         let cell = tableView.dequeueReusableCell(withIdentifier: "gradeCell", for: indexPath) as! GradeTableViewCell
         cell.schoolLabel?.text = gradeList[indexPath.row].school
         cell.departmentLabel?.text = gradeList[indexPath.row].department
-        cell.gradeLabel?.text = ""
+        cell.gradeLabel?.text = gradeList[indexPath.row].getLastGradeString()
         
         return cell
     }
@@ -38,7 +38,7 @@ class BasicSearchPageController: UIViewController,UITableViewDataSource, UITable
     
     @objc func textFieldDidChange(_ textField: UITextField) {
         if let text=searchTextField.text {
-            gradeList = BasicGrade.findByKeyword(year: Config.Application.basicFirstYear, keyWord: text)
+            gradeList = BasicGrade.sortHighToLow(grades: BasicGrade.findByKeyword(year: Config.Application.basicFirstYear, keyWord: text))
             reloadTable()
         }
     }

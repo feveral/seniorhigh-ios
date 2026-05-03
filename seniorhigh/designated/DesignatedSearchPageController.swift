@@ -36,7 +36,7 @@ class DesignatedSearchPageController: UIViewController,UITableViewDataSource, UI
     
     @objc func textFieldDidChange(_ textField: UITextField) {
         if let text=searchTextField.text {
-            gradeList = DesignatedGrade.findByKeyword(year: Config.Application.designatedFirstYear, keyWord: text)
+            gradeList = DesignatedGrade.findByKeyword(year: Config.Application.designatedFirstYear, keyWord: text, includeSkill: true)
             gradeList = DesignatedGrade.sortHighToLow(grades: gradeList)
             reloadTable()
         }

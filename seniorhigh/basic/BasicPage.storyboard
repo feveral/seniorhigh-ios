@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,8 +17,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="BGB-s1-tkV">
+                                <rect key="frame" x="14" y="9" width="386" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BGB-b1-all">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="30"/>
+                                        <color key="tintColor" systemColor="viewFlipsideBackgroundColor"/>
+                                        <state key="normal" title="全部學校"/>
+                                        <connections>
+                                            <action selector="switchToAllSchool:" destination="P2g-ao-opV" eventType="touchUpInside" id="BGB-a1-all"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BGB-b2-gr1">
+                                        <rect key="frame" x="132" y="0.0" width="120" height="30"/>
+                                        <state key="normal" title="一類組">
+                                            <color key="titleColor" systemColor="viewFlipsideBackgroundColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="switchToFirstGroup:" destination="P2g-ao-opV" eventType="touchUpInside" id="BGB-a2-gr1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BGB-b3-gr2">
+                                        <rect key="frame" x="264" y="0.0" width="120" height="30"/>
+                                        <state key="normal" title="二/三類組">
+                                            <color key="titleColor" systemColor="viewFlipsideBackgroundColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="switchToSecondGroup:" destination="P2g-ao-opV" eventType="touchUpInside" id="BGB-a3-gr2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IeA-dy-aoE">
-                                <rect key="frame" x="0.0" y="9" width="414" height="580"/>
+                                <rect key="frame" x="0.0" y="43" width="414" height="546"/>
                                 <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="basicCell" textLabel="PET-4B-Rkf" rowHeight="70" style="IBUITableViewCellStyleDefault" id="fLG-2q-Mui" customClass="SchoolListTableViewCell" customModule="seniorhigh" customModuleProvider="target">
@@ -40,6 +72,55 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="gradeCell" rowHeight="70" id="BGB-gc-cel" customClass="GradeTableViewCell" customModule="seniorhigh" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="120" width="414" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BGB-gc-cel" id="BGB-cv-con">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="BGB-sv-lbl">
+                                                    <rect key="frame" x="20" y="15" width="250" height="47"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGB-l1-sch">
+                                                            <rect key="frame" x="0.0" y="0.0" width="250" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" systemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGB-l2-dep">
+                                                            <rect key="frame" x="0.0" y="26.5" width="250" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" systemColor="scrollViewTexturedBackgroundColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="250" id="BGB-wc-lbl"/>
+                                                    </constraints>
+                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGB-l3-grd">
+                                                    <rect key="frame" x="352.5" y="24" width="41.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="BGB-sv-lbl" firstAttribute="leading" secondItem="BGB-cv-con" secondAttribute="leading" constant="20" id="BGB-c1-sv"/>
+                                                <constraint firstItem="BGB-l3-grd" firstAttribute="top" secondItem="BGB-cv-con" secondAttribute="topMargin" constant="13" id="BGB-c2-grd"/>
+                                                <constraint firstItem="BGB-sv-lbl" firstAttribute="top" secondItem="BGB-cv-con" secondAttribute="topMargin" constant="4" id="BGB-c3-sv"/>
+                                                <constraint firstItem="BGB-l3-grd" firstAttribute="trailing" secondItem="BGB-cv-con" secondAttribute="trailingMargin" id="BGB-c4-grd"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="departmentLabel" destination="BGB-l2-dep" id="BGB-o1-dep"/>
+                                            <outlet property="gradeLabel" destination="BGB-l3-grd" id="BGB-o2-grd"/>
+                                            <outlet property="schoolLabel" destination="BGB-l1-sch" id="BGB-o3-sch"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="P2g-ao-opV" id="6AE-vu-6Uk"/>
@@ -49,13 +130,21 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Zjs-Le-4aj"/>
                         <color key="backgroundColor" white="0" alpha="0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="IeA-dy-aoE" firstAttribute="leading" secondItem="Zjs-Le-4aj" secondAttribute="leading" id="4U5-0P-eTp"/>
                             <constraint firstItem="Zjs-Le-4aj" firstAttribute="bottom" secondItem="IeA-dy-aoE" secondAttribute="bottom" constant="50" id="9P3-ME-g6m"/>
                             <constraint firstItem="Zjs-Le-4aj" firstAttribute="trailing" secondItem="IeA-dy-aoE" secondAttribute="trailing" id="FoY-dc-gaq"/>
                             <constraint firstItem="IeA-dy-aoE" firstAttribute="centerX" secondItem="8f6-u6-S8c" secondAttribute="centerX" id="HOP-vX-xW0"/>
-                            <constraint firstItem="IeA-dy-aoE" firstAttribute="top" secondItem="Zjs-Le-4aj" secondAttribute="top" constant="9" id="O58-JE-iXy"/>
+                            <constraint firstItem="BGB-s1-tkV" firstAttribute="top" secondItem="Zjs-Le-4aj" secondAttribute="top" constant="9" id="BGB-ct-top"/>
+                            <constraint firstItem="IeA-dy-aoE" firstAttribute="top" secondItem="BGB-s1-tkV" secondAttribute="bottom" constant="2" id="BGB-ct-tv"/>
+                            <constraint firstItem="BGB-s1-tkV" firstAttribute="leading" secondItem="Zjs-Le-4aj" secondAttribute="leading" constant="14" id="BGB-ct-svl"/>
+                            <constraint firstItem="Zjs-Le-4aj" firstAttribute="trailing" secondItem="BGB-s1-tkV" secondAttribute="trailing" constant="14" id="BGB-ct-svr"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="BGB-gr-rgt" appends="YES" id="BGB-oc-rgt"/>
+                            <outletCollection property="gestureRecognizers" destination="BGB-gr-lft" appends="YES" id="BGB-oc-lft"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="學測分數" id="JO1-9T-ywS">
                         <barButtonItem key="leftBarButtonItem" title="返回" image="ic_back" id="wow-ZJ-FPP">
@@ -73,10 +162,24 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backButton" destination="wow-ZJ-FPP" id="HAN-pU-WHI"/>
+                        <outlet property="groupButtonStackView" destination="BGB-s1-tkV" id="BGB-ol-stk"/>
+                        <outlet property="switchToAllSchoolButton" destination="BGB-b1-all" id="BGB-ol-all"/>
+                        <outlet property="switchToFirstGroupButton" destination="BGB-b2-gr1" id="BGB-ol-gr1"/>
+                        <outlet property="switchToSecondGroupButton" destination="BGB-b3-gr2" id="BGB-ol-gr2"/>
                         <outlet property="tableView" destination="IeA-dy-aoE" id="SbA-10-ZaV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OTd-BG-uPM" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="BGB-gr-rgt">
+                    <connections>
+                        <action selector="swipeRight:" destination="P2g-ao-opV" id="BGB-ac-rgt"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="BGB-gr-lft">
+                    <connections>
+                        <action selector="swipeLeft:" destination="P2g-ao-opV" id="BGB-ac-lft"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1975.36231884058" y="-670.98214285714278"/>
         </scene>
@@ -207,6 +310,12 @@
         </systemColor>
         <systemColor name="scrollViewTexturedBackgroundColor">
             <color red="0.43529411764705878" green="0.44313725490196082" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="viewFlipsideBackgroundColor">
+            <color red="0.1215686274509804" green="0.12941176470588239" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

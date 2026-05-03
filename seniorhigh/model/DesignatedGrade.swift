@@ -117,7 +117,7 @@ class DesignatedGrade {
         return DesignatedGrade()
     }
     
-    static func findByKeyword(year: String, keyWord: String) -> [DesignatedGrade] {
+    static func findByKeyword(year: String, keyWord: String, includeSkill: Bool = true) -> [DesignatedGrade] {
         do {
             if keyWord.count == 0 {
                 return []
@@ -129,7 +129,11 @@ class DesignatedGrade {
                 let startIndex = keyWord.startIndex
                 keyWordPattern += (String(keyWord[keyWord.index(startIndex, offsetBy: i)]) + "%");
             }
-            let sql = "SELECT * from Designated where year='\(year)' AND (school LIKE '\(keyWordPattern)' OR department LIKE '\(keyWordPattern)');"
+            var sql = "SELECT * from Designated where year='\(year)' AND (school LIKE '\(keyWordPattern)' OR department LIKE '\(keyWordPattern)')"
+            if !includeSkill {
+                sql += " AND (skill IS NULL OR skill=0)"
+            }
+            sql += ";"
             for row in try db.prepare(sql) {
                 grades.append(DesignatedGrade.dbRowToDesignatedGrade(row: row))
             }
@@ -144,7 +148,7 @@ class DesignatedGrade {
         do {
             var grades: [DesignatedGrade] = []
             let db: Connection = GradeDatabase.getDatabaseConnection()!
-            let sql = "SELECT * from Designated where year='\(year)' AND mathB>0"
+            let sql = "SELECT * from Designated where year='\(year)' AND mathB>0 AND (skill IS NULL OR skill=0)"
             for row in try db.prepare(sql) {
                 grades.append(DesignatedGrade.dbRowToDesignatedGrade(row: row))
             }
@@ -159,7 +163,7 @@ class DesignatedGrade {
         do {
             var grades: [DesignatedGrade] = []
             let db: Connection = GradeDatabase.getDatabaseConnection()!
-            let sql = "SELECT * from Designated where year='\(year)' AND (mathA>0 OR mathAdvance>0) AND biological IS NULL"
+            let sql = "SELECT * from Designated where year='\(year)' AND (mathA>0 OR mathAdvance>0) AND biological IS NULL AND (skill IS NULL OR skill=0)"
             for row in try db.prepare(sql) {
                 grades.append(DesignatedGrade.dbRowToDesignatedGrade(row: row))
             }
@@ -174,7 +178,7 @@ class DesignatedGrade {
         do {
             var grades: [DesignatedGrade] = []
             let db: Connection = GradeDatabase.getDatabaseConnection()!
-            let sql = "SELECT * from Designated where year='\(year)' AND biological>0"
+            let sql = "SELECT * from Designated where year='\(year)' AND biological>0 AND (skill IS NULL OR skill=0)"
             for row in try db.prepare(sql) {
                 grades.append(DesignatedGrade.dbRowToDesignatedGrade(row: row))
             }
